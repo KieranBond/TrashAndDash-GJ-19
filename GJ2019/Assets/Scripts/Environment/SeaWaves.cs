@@ -6,9 +6,9 @@ namespace GJ.Environment.Impl
 {
     public class SeaWaves : MonoBehaviour
     {
-        [Range(0, 1)][SerializeField] private float m_waveSpeed = 0.7f;
-        [Range(0, 1)][SerializeField] private float m_waveAmount = 0.3f;
-        [Range(0, 1)][SerializeField] private float m_waveHeight = 0.4f;
+        /*[Range(0, 1)]*/[SerializeField] private float m_waveSpeed = 0.7f;
+        /*[Range(0, 1)]*/[SerializeField] private float m_waveAmount = 0.3f;
+        /*[Range(0, 1)]*/[SerializeField] private float m_waveHeight = 0.4f;
 
         Vector3[] m_originalVertices;
 
@@ -22,7 +22,6 @@ namespace GJ.Environment.Impl
             StartCoroutine(MovementRoutine());
         }
 
-        // Update is called once per frame
         IEnumerator MovementRoutine()
         {
             Mesh vMesh = GetComponent<MeshFilter>().mesh;
@@ -71,10 +70,11 @@ namespace GJ.Environment.Impl
 
                 vertices[i+1] = vert;
 
-                yield return null;
             }
 
             vMesh.vertices = vertices;
+
+            StartCoroutine(MovementRoutine());
         }
     }
 }
