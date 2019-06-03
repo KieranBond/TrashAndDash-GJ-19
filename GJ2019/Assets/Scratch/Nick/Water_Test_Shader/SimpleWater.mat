@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Shader Graphs_Simple_Water
+  m_Name: SimpleWater
   m_Shader: {fileID: -6465566751694194690, guid: 26ad213d681d0684eb778a1ccedf965c,
     type: 3}
   m_ShaderKeywords: 

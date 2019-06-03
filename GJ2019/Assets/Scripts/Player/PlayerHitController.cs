@@ -8,19 +8,24 @@ public class PlayerHitController : MonoBehaviour
     [SerializeField]
     float force = 50.0f;
 
+    [SerializeField]
+    GameObject player;
+
+    GamePadState state;
+    GamePadState prevState;
+
     void Update()
     {
-        GamePadState state = GamePad.GetState(transform.parent.GetComponent<PlayerMovement>().playerIndex);
+        prevState = state;
+        state = GamePad.GetState(player.GetComponent<PlayerMovement>().playerIndex);
 
-        if (state.IsConnected)
-        {
-            GamePadState prevState = state;
-            state = GamePad.GetState(transform.parent.GetComponent<PlayerMovement>().playerIndex);
+        //if (state.IsConnected)
+        //{
             if (prevState.Buttons.A == ButtonState.Released && state.Buttons.A == ButtonState.Pressed)
             {
                 GetComponent<BoxCollider>().enabled = !GetComponent<BoxCollider>().enabled;
             }
-        }
+        //}
     }
 
     private void OnTriggerEnter(Collider other)

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using XInputDotNetPure;
 
 public class TrashInteract : MonoBehaviour
 {
@@ -13,22 +14,27 @@ public class TrashInteract : MonoBehaviour
 
     void Update()
     {
-        if(playerOverTrash)
+        if (playerOverTrash)
         {
-            //allow for pickup
-            if(Input.GetButtonDown("Fire1"))
+            GamePadState state = GamePad.GetState(player.GetComponent<PlayerMovement>().playerIndex);
+            if (state.IsConnected)
             {
-                if (player.GetComponent<PlayerTrashCollect>().AddTrash(gameObject))
+                //allow for pickup
+                GamePadState prevState = state;
+                state = GamePad.GetState(player.GetComponent<PlayerMovement>().playerIndex);
+                if (state.Buttons.A == ButtonState.Pressed)
                 {
-                    //pickup trash
-                    //assign trash to player
-                    Debug.Log("Trash pickup");
+                    if (player.GetComponent<PlayerTrashCollect>().AddTrash(gameObject))
+                    {
+                        //pickup trash
+                        //assign trash to player
+                        Debug.Log("Trash pickup");
 
-                    playerOverTrash = false;
+                        playerOverTrash = false;
 
-                    gameObject.transform.SetParent(player.transform);
-                    gameObject.SetActive(false);
-                    //Destroy(gameObject);
+                        gameObject.transform.SetParent(player.transform);
+                        gameObject.SetActive(false);
+                    }
                 }
             }
         }

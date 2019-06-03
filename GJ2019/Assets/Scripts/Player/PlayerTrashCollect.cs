@@ -16,6 +16,9 @@ public class PlayerTrashCollect : MonoBehaviour
 
     bool enterDropOff = false;
 
+    GamePadState prevState;
+    GamePadState state;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -26,12 +29,11 @@ public class PlayerTrashCollect : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        GamePadState state = GamePad.GetState(GetComponent<PlayerMovement>().playerIndex);
-        if (state.IsConnected)
-        {
+        //if (state.IsConnected)
+        //{
             if (enterDropOff)
             {
-                GamePadState prevState = state;
+                prevState = state;
                 state = GamePad.GetState(GetComponent<PlayerMovement>().playerIndex);
                 if (prevState.Buttons.A == ButtonState.Released && state.Buttons.A == ButtonState.Pressed)
                 {
@@ -47,7 +49,7 @@ public class PlayerTrashCollect : MonoBehaviour
                     index = 0;
                 }
             }
-        }
+        //}
     }
 
     public bool AddTrash(GameObject aTrash)
