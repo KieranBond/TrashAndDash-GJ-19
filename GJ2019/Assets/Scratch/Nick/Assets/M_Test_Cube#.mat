@@ -35,7 +35,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - Texture2D_A237D676:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: c43455d73d220a4488ae1d9328fd378b, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - Texture2D_D0719D46:
@@ -46,6 +46,6 @@ Material:
     - Vector1_A35CF3D: 0
     m_Colors:
     - Color_B2449043: {r: 0, g: 0.269247, b: 0.5754717, a: 0}
-    - Color_BD7DEC34: {r: 0.08675194, g: 1, b: 0, a: 0}
-    - Color_BE6355AF: {r: 0, g: 0, b: 0, a: 0}
+    - Color_BD7DEC34: {r: 0.1510086, g: 0, b: 1, a: 0}
+    - Color_BE6355AF: {r: 1, g: 0.7466017, b: 0, a: 0}
     - Color_FFCC3683: {r: 1, g: 0, b: 0, a: 0}

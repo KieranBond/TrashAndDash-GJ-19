@@ -22,6 +22,8 @@ public class TrashInteract : MonoBehaviour
                 player.GetComponent<PlayerScore>().InceremtnScore(1);
 
                 playerOverTrash = false;
+
+                Destroy(gameObject);
             }
         }
     }
