@@ -12,6 +12,8 @@ public class PlayerScore : MonoBehaviour
     TextMeshPro scoreText;
 
     int score;
+    public int GetScore
+    { get { return score; } }
 
     private void Update()
     {
