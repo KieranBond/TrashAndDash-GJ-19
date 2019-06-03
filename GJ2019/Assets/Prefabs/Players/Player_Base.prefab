@@ -549,8 +549,8 @@ MonoBehaviour:
   acceleration: 5
   deceleration: 5
   maxSpeed: 25
-  InvertX: 1
-  InvertY: 1
+  InvertX: 0
+  InvertY: 0
 --- !u!114 &3777716072789516738
 MonoBehaviour:
   m_ObjectHideFlags: 0

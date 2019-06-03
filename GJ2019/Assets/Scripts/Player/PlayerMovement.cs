@@ -40,7 +40,7 @@ public class PlayerMovement : MonoBehaviour
         
         if (state.IsConnected)
         {
-            Vector3 movement = new Vector3(state.ThumbSticks.Left.X, 0, state.ThumbSticks.Left.Y);
+            Vector3 movement = MovementRelativeToCamera(new Vector3(state.ThumbSticks.Left.X, 0, state.ThumbSticks.Left.Y));
             //speed = movementSpeed;
             if(InvertX)
             {
@@ -66,7 +66,7 @@ public class PlayerMovement : MonoBehaviour
                 speed = maxSpeed;
                 //transform.position += movement * speed * Time.deltaTime;
             }
-            newPosition = transform.position + -transform.up * speed * Time.deltaTime;
+            //newPosition = transform.position + -transform.up * speed * Time.deltaTime;
             
 
             if (movement != Vector3.zero)
@@ -113,5 +113,17 @@ public class PlayerMovement : MonoBehaviour
     public void AttackAnimFin()
     {
         GetComponentInChildren<PlayerHitController>().SetCollider(false);
+    }
+
+    public static Vector3 MovementRelativeToCamera(Vector3 a_input)
+    {
+        Camera cam = Camera.main;
+        Vector3 camForward = cam.transform.forward;
+        Vector3 camRight = cam.transform.right;
+        camForward.y = 0f;
+        camRight.y = 0f;
+        camForward = camForward.normalized;
+        camRight = camRight.normalized;
+        return (a_input.x * camRight + a_input.z * camForward);
     }
 }
