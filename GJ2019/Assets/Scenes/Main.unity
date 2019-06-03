@@ -531,12 +531,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 918718673}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4321b72bd244f6842a581137e2f5fa70, type: 3}
+  m_Script: {fileID: 11500000, guid: c9bc44a196b7c0c4a8dc32a5b7dd9f53, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   movementSpeed: 2
   boostSpeed: 5
   playerIndex: 1
+  InvertX: 0
+  InvertY: 0
 --- !u!54 &918718675
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -932,12 +934,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 1319466770}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4321b72bd244f6842a581137e2f5fa70, type: 3}
+  m_Script: {fileID: 11500000, guid: c9bc44a196b7c0c4a8dc32a5b7dd9f53, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   movementSpeed: 2
   boostSpeed: 5
   playerIndex: 0
+  InvertX: 0
+  InvertY: 0
 --- !u!65 &1319466772
 BoxCollider:
   m_ObjectHideFlags: 0
