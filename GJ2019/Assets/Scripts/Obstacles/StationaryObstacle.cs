@@ -92,6 +92,10 @@ namespace GJ.Obstacles.Impl
 
             Vector3 startingPos = transform.position;
 
+            //testing
+            Deactivate();
+            Destroy(gameObject);
+
             while (Vector3.Distance(transform.position, m_loweredPosition) > 0)
             {
                 currentLerpTime += Time.deltaTime;
@@ -102,6 +106,7 @@ namespace GJ.Obstacles.Impl
 
                 yield return new WaitForFixedUpdate();
             }
+            Debug.Log("Finsihed");
         }
 
         public EaseType GetEaseType()
