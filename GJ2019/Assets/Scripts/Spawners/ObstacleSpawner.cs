@@ -54,13 +54,35 @@ namespace GJ.SpawningSystem
 
             float spawnMinX = -m_spawnZoneWidth;
             float spawnMaxX = m_spawnZoneWidth;
-            spawnPosition.x = Random.Range(spawnMinX, spawnMaxX);
+            float variation = Random.Range(spawnMinX, spawnMaxX);
+
+            spawnPosition += spawnParent.right * variation;//This should make it spawn somewhere along the length of its right axis
 
             spawnedItem.transform.position = spawnPosition;
 
-            spawnedItem.GetComponent<Obstacle>().Play();
+            if(spawnedItem.GetComponent<Obstacle>() != null)
+                spawnedItem.GetComponent<Obstacle>().Play();
 
             m_spawningRoutine = null;
+        }
+
+        private void OnDrawGizmos()
+        {
+            Gizmos.color = Color.red;
+
+            Vector3 linePos = new Vector3();
+            Vector3 line2pos = new Vector3();
+
+            foreach(Transform spawnPos in m_spawnPositions)
+            {
+                linePos = spawnPos.position;
+                linePos += spawnPos.right * m_spawnZoneWidth;
+
+                line2pos = linePos;
+                line2pos -= spawnPos.right * (m_spawnZoneWidth * 2);
+                Gizmos.DrawLine(linePos, line2pos);
+            }
+
         }
     }
 }

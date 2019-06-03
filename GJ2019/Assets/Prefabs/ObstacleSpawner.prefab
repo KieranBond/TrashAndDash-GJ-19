@@ -9,9 +9,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1889954588572168893}
-  - component: {fileID: 1889954588572168894}
+  - component: {fileID: 1905916429689704820}
   m_Layer: 0
-  m_Name: Spawner
+  m_Name: ObstacleSpawner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -31,7 +31,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1889954588572168894
+--- !u!114 &1905916429689704820
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -40,11 +40,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1889954588572168895}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5a2feb6353d993848a854a2817052aa0, type: 3}
+  m_Script: {fileID: 11500000, guid: 61e3da7079023f848b2406e9352ead29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_spawnPrefab: {fileID: 0}
-  m_spawnParent: {fileID: 0}
+  m_spawnPrefabs: []
+  m_spawnPositions: []
+  m_spawnZoneWidth: 50
   m_minimumSpawnTime: 1
-  m_maximumSpawnTime: 5
-  SpawnItems: 1
+  m_maximumSpawnTime: 2
+  SpawnObstacles: 1

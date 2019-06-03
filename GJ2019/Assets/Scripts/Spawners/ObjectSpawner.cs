@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using GJ.Obstacles.Base;
+using System.Collections;
 using UnityEngine;
 
 namespace GJ.SpawningSystem
@@ -59,7 +60,38 @@ namespace GJ.SpawningSystem
 
             spawnedItem.transform.position = spawnPosition;
 
+            //As we may use this for stationary obstacle spawning
+            if(spawnedItem.GetComponent<Obstacle>() != null)
+            {
+                spawnedItem.GetComponent<Obstacle>().Play();
+            }
+
             m_spawningRoutine = null;
+        }
+
+        private void OnDrawGizmos()
+        {
+            Gizmos.color = Color.red;
+
+            Vector3 linePos = transform.position;
+            linePos.z += m_spawnZoneLength;
+            linePos.x += m_spawnZoneWidth;
+
+            Vector3 line2pos = linePos;
+            line2pos.x -= m_spawnZoneWidth * 2;
+            Gizmos.DrawLine(linePos, line2pos);
+
+            line2pos.x = linePos.x;
+            line2pos.z -= m_spawnZoneLength * 2;
+            Gizmos.DrawLine(linePos, line2pos);
+
+            linePos.z = line2pos.z;
+            linePos.x -= m_spawnZoneWidth * 2;
+            Gizmos.DrawLine(linePos, line2pos);
+
+            line2pos.z += m_spawnZoneLength * 2;
+            line2pos.x = linePos.x;
+            Gizmos.DrawLine(linePos, line2pos);
         }
     }
 }
