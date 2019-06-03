@@ -110,7 +110,7 @@ public class PlayerMovement : MonoBehaviour
         rigidbody.MovePosition(transform.position += -transform.up * speed * Time.deltaTime);
     }
 
-    void AttachAnimFin()
+    public void AttackAnimFin()
     {
         GetComponentInChildren<PlayerHitController>().SetCollider(false);
     }
