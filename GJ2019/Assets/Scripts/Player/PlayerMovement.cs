@@ -17,10 +17,12 @@ public class PlayerMovement : MonoBehaviour
     private GamePadState state;
     public float movementSpeed;
     public float boostSpeed;
-    private float speed;
+    public float speed;
     public PlayerIndex playerIndex;
-    public float boostTime = 5;
+    public Rigidbody rigidbody;
+    public float boostTime;
     private bool canSpeedBoost;
+    private float acceleration = 1;
     public bool InvertX = false;
     public bool InvertY = false;
 
@@ -41,18 +43,35 @@ public class PlayerMovement : MonoBehaviour
             {
                 movement.z *= -1;
             }
+            if(state.ThumbSticks.Left.X == 0 && state.ThumbSticks.Left.Y == 0 && speed >= movementSpeed)
+            {
+               // transform.position += movement * (speed -= acceleration * Time.deltaTime) * Time.deltaTime;
+                speed -= acceleration * Time.deltaTime;//movement * (speed -= acceleration * Time.deltaTime) * Time.deltaTime;
+                //rigidbody.velocity += boostSpeed * Vector3.forward;
+            }
+            else if(speed <= 10)
+            {
+                speed += acceleration * Time.deltaTime;
+                //transform.position += movement * (speed += acceleration * Time.deltaTime) * Time.deltaTime;
+            }
+            else
+            {
+                speed = 10;
+                //transform.position += movement * speed * Time.deltaTime;
+            }
 
-            transform.position += movement * movementSpeed * Time.deltaTime;
-        
+            transform.position += -transform.up * speed * Time.deltaTime;
+
             if (movement != Vector3.zero)
             {
                 transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(movement), Time.deltaTime * 10.0f);
                 transform.rotation = Quaternion.Euler(-90.0f, transform.rotation.eulerAngles.y, transform.rotation.eulerAngles.z);
             }
 
-            if(state.Buttons.RightShoulder == ButtonState.Pressed)
+
+            if (state.Buttons.RightShoulder == ButtonState.Pressed)
             {
-                if (canSpeedBoost == false && boostTime >= 5)
+                if (canSpeedBoost == false && boostTime >= 2)
                 {
                     canSpeedBoost = true;
                 }
@@ -70,7 +89,7 @@ public class PlayerMovement : MonoBehaviour
                     canSpeedBoost = false;
                 }
             }
-            if(!canSpeedBoost && boostTime <= 5)
+            if(!canSpeedBoost && boostTime <= 2)
             {
                 speed = movementSpeed;
                 boostTime += Time.deltaTime;
@@ -78,4 +97,5 @@ public class PlayerMovement : MonoBehaviour
 
         }
     }
+
 }
