@@ -537,6 +537,7 @@ MonoBehaviour:
   movementSpeed: 2
   boostSpeed: 5
   playerIndex: 1
+  boostTime: 2
   InvertX: 0
   InvertY: 0
 --- !u!54 &918718675
@@ -940,6 +941,7 @@ MonoBehaviour:
   movementSpeed: 2
   boostSpeed: 5
   playerIndex: 0
+  boostTime: 5
   InvertX: 0
   InvertY: 0
 --- !u!65 &1319466772
