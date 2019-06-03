@@ -19,8 +19,8 @@ public class PlayerMovement : MonoBehaviour
     public float boostSpeed;
     private float speed;
     public PlayerIndex playerIndex;
-    private bool isSpeed;
-
+    public float boostTime = 5;
+    private bool canSpeedBoost;
     public bool InvertX = false;
     public bool InvertY = false;
 
@@ -32,6 +32,7 @@ public class PlayerMovement : MonoBehaviour
         if (state.IsConnected)
         {
             Vector3 movement = new Vector3(state.ThumbSticks.Left.X, 0, state.ThumbSticks.Left.Y);
+            //speed = movementSpeed;
             if(InvertX)
             {
                 movement.x *= -1;
@@ -46,25 +47,35 @@ public class PlayerMovement : MonoBehaviour
             if (movement != Vector3.zero)
             {
                 transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(movement), Time.deltaTime * 10.0f);
+                transform.rotation = Quaternion.Euler(-90.0f, transform.rotation.eulerAngles.y, transform.rotation.eulerAngles.z);
             }
 
             if(state.Buttons.RightShoulder == ButtonState.Pressed)
             {
-                if(isSpeed)
+                if (canSpeedBoost == false && boostTime >= 5)
                 {
-                    speed = boostSpeed;
+                    canSpeedBoost = true;
                 }
             }
-            else
+
+            if (canSpeedBoost)
+            {
+                if (boostTime >= 0)
+                {
+                    boostTime -= Time.deltaTime;
+                    speed = boostSpeed;
+                }
+                else
+                {
+                    canSpeedBoost = false;
+                }
+            }
+            if(!canSpeedBoost && boostTime <= 5)
             {
                 speed = movementSpeed;
+                boostTime += Time.deltaTime;
             }
-        }
-    }
 
-    private IEnumerator Wait()
-    {
-        speed = boostSpeed;
-        yield return new WaitForSeconds(2);
+        }
     }
 }
