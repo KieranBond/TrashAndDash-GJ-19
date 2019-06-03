@@ -51,6 +51,6 @@ Material:
     m_Colors:
     - Color_B2449043: {r: 0, g: 0.269247, b: 0.5754717, a: 0}
     - Color_BD7DEC34: {r: 0.08675194, g: 1, b: 0, a: 0}
-    - Color_BE6355AF: {r: 1, g: 0, b: 0.06782532, a: 0}
+    - Color_BE6355AF: {r: 1, g: 1, b: 0.007843138, a: 1}
     - Color_D4775EC8: {r: 0, g: 0, b: 0, a: 0}
     - Color_FFCC3683: {r: 1, g: 1, b: 1, a: 0}

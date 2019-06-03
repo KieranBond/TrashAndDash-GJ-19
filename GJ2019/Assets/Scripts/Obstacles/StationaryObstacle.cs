@@ -21,22 +21,20 @@ namespace GJ.Obstacles.Impl
 
         private Coroutine m_movementRoutine;
 
-        private void OnEnable()
-        {
-            m_raisedPosition = transform.position;
-
-            //Set it below the water
-            Vector3 movePos = m_raisedPosition;
-            movePos.y -= m_obstacleHeight;
-            transform.position = movePos;
-
-            m_loweredPosition = transform.position;
-        }
-
         public void Play()
         {
             if (m_movementRoutine != null)
                 StopAllCoroutines();
+
+            m_raisedPosition = transform.position;
+            m_raisedPosition.y += m_obstacleHeight * 0.5f;
+
+            //Set it below the water
+            Vector3 movePos = transform.position;
+            movePos.y -= m_obstacleHeight * 0.6f;
+            transform.position = movePos;
+
+            m_loweredPosition = transform.position;
 
             m_movementRoutine = StartCoroutine(RiseAndSink());
         }
@@ -46,6 +44,10 @@ namespace GJ.Obstacles.Impl
             m_movementRoutine = StartCoroutine(RiseMovement());
             yield return new WaitForSeconds(m_riseMovementDuration + m_stayDuration);
             m_movementRoutine = StartCoroutine(SinkMovement());
+            yield return new WaitForSeconds(m_sinkMovementDuration);
+
+            //Sink then destroy
+            Destroy(gameObject);
         }
 
         public void Activate()
@@ -61,7 +63,8 @@ namespace GJ.Obstacles.Impl
             if (m_movementRoutine != null)
                 StopAllCoroutines();
 
-            m_movementRoutine = StartCoroutine(SinkMovement());
+
+            //m_movementRoutine = StartCoroutine(SinkMovement());
         }
 
         private IEnumerator RiseMovement()
@@ -100,27 +103,12 @@ namespace GJ.Obstacles.Impl
 
                 yield return new WaitForFixedUpdate();
             }
+            Debug.Log("Finsihed");
         }
 
         public EaseType GetEaseType()
         {
             return EasingType;
-        }
-
-        private void OnGUI()
-        {
-            if (GUILayout.Button("Play"))
-            {
-                Play();
-            }
-            if (GUILayout.Button("Activate"))
-            {
-                Activate();
-            }
-            if (GUILayout.Button("Deactivate"))
-            {
-                Deactivate();
-            }
         }
     }
 }
