@@ -42,7 +42,7 @@ namespace GJ.SpawningSystem
             yield return new WaitForSeconds(waitTime);
 
             //Choose the prefab to spawn
-            int chosenIndex = Random.Range(0, m_spawnPrefabs.Length);
+            int chosenIndex = Random.Range(0, (m_spawnPrefabs.Length - 1));
             GameObject spawnedItem = Instantiate(m_spawnPrefabs[chosenIndex], m_spawnParent);
             m_lastSpawnedItem = spawnedItem;
 
