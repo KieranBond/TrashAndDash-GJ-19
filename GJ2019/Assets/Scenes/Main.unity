@@ -535,6 +535,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movementSpeed: 2
+  boostSpeed: 5
   playerIndex: 1
 --- !u!54 &918718675
 Rigidbody:
@@ -935,6 +936,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movementSpeed: 2
+  boostSpeed: 5
   playerIndex: 0
 --- !u!65 &1319466772
 BoxCollider:
