@@ -63,7 +63,7 @@ public class PlayerMovement : MonoBehaviour
             }
             else
             {
-                speed = 10;
+                speed = maxSpeed;
                 //transform.position += movement * speed * Time.deltaTime;
             }
             newPosition = transform.position + -transform.up * speed * Time.deltaTime;
