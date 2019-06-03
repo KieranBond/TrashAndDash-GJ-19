@@ -32,7 +32,10 @@ public class PlayerMovement : MonoBehaviour
         if (state.IsConnected)
         {
             Vector3 movement = new Vector3(state.ThumbSticks.Left.X, 0, state.ThumbSticks.Left.Y);
+<<<<<<< HEAD
             //speed = movementSpeed;
+=======
+>>>>>>> master
             if(InvertX)
             {
                 movement.x *= -1;
@@ -42,8 +45,13 @@ public class PlayerMovement : MonoBehaviour
                 movement.z *= -1;
             }
 
+<<<<<<< HEAD
             transform.position += movement * speed * Time.deltaTime;
 
+=======
+            transform.position += movement * movementSpeed * Time.deltaTime;
+        
+>>>>>>> master
             if (movement != Vector3.zero)
             {
                 transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(movement), Time.deltaTime * 10.0f);

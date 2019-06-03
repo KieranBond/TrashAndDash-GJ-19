@@ -3,12 +3,12 @@ using static GJ.HelperScripts.Easing;
 
 namespace GJ.Obstacles.Base
 {
-    public abstract class Obstacle : MonoBehaviour
+    public interface IObstacle
     {
-        public EaseType EasingType = EaseType.Linear;
+        EaseType GetEaseType();
 
-        public abstract void Play();
-        public abstract void Activate();
-        public abstract void Deactivate();
+        void Play();
+        void Activate();
+        void Deactivate();
     }
 }

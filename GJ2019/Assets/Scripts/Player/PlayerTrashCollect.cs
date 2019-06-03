@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using XInputDotNetPure;
 
 public class PlayerTrashCollect : MonoBehaviour
 {
@@ -25,20 +26,26 @@ public class PlayerTrashCollect : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(enterDropOff)
+        GamePadState state = GamePad.GetState(GetComponent<PlayerMovement>().playerIndex);
+        if (state.IsConnected)
         {
-            if (Input.GetButtonDown("Fire1"))
+            if (enterDropOff)
             {
-                for (int i = 0; i < trash.Length; i++)
+                GamePadState prevState = state;
+                state = GamePad.GetState(GetComponent<PlayerMovement>().playerIndex);
+                if (prevState.Buttons.A == ButtonState.Released && state.Buttons.A == ButtonState.Pressed)
                 {
-                    if (trash[i] != null)
+                    for (int i = 0; i < trash.Length; i++)
                     {
-                        GetComponent<PlayerScore>().InceremtnScore(1);
-                        Destroy(trash[i]);
-                        trash[i] = null;
+                        if (trash[i] != null)
+                        {
+                            GetComponent<PlayerScore>().InceremtnScore(1);
+                            Destroy(trash[i]);
+                            trash[i] = null;
+                        }
                     }
+                    index = 0;
                 }
-                index = 0;
             }
         }
     }

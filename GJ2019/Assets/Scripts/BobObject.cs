@@ -4,34 +4,22 @@ using UnityEngine;
 
 public class BobObject : MonoBehaviour
 {
-    Rigidbody rb;
-    bool isInWater = false;
+    float originalY;
+
+    [SerializeField]
+    float floatStrendth = 0.75f;
 
     // Start is called before the first frame update
     void Start()
     {
-        rb = GetComponent<Rigidbody>();
+        originalY = transform.position.y;
     }
 
     // Update is called once per frame
-    void FixedUpdate()
+    void Update()
     {
-        if(isInWater)
-        {
-            Vector3 force = transform.up *  12.72f;
-            rb.AddRelativeForce(force, ForceMode.Acceleration);
-        }
-    }
-
-    private void OnTriggerEnter(Collider other)
-    {
-        isInWater = true;
-        rb.drag = 5f;
-    }
-
-    private void OnTriggerExit(Collider other)
-    {
-        isInWater = true;
-        rb.drag = 0.05f;
+        transform.position = new Vector3(transform.position.x,
+            originalY + ((float)Mathf.Sin(Time.time) * floatStrendth),
+            transform.position.z);
     }
 }
