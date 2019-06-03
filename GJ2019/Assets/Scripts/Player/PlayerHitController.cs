@@ -14,6 +14,12 @@ public class PlayerHitController : MonoBehaviour
     GamePadState state;
     GamePadState prevState;
 
+    [SerializeField]
+    Animator charcAnim;
+
+    [SerializeField]
+    BoxCollider collider;
+
     void Update()
     {
         prevState = state;
@@ -21,18 +27,24 @@ public class PlayerHitController : MonoBehaviour
 
         //if (state.IsConnected)
         //{
-            if (prevState.Buttons.A == ButtonState.Released && state.Buttons.A == ButtonState.Pressed)
+            if (prevState.Buttons.X == ButtonState.Released && state.Buttons.X == ButtonState.Pressed)
             {
-                GetComponent<BoxCollider>().enabled = !GetComponent<BoxCollider>().enabled;
+                charcAnim.SetTrigger("Attack");
+                SetCollider(true);
             }
         //}
+    }
+
+    public void SetCollider(bool aEnable)
+    {
+        collider.enabled = aEnable;
     }
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Player")
         {
-            GetComponent<BoxCollider>().enabled = false;
+            //collider.enabled = false;
 
             Vector3 opositeVector = other.transform.position - gameObject.transform.position;
             opositeVector *= force;
