@@ -9,7 +9,7 @@ public class PlayerScore : MonoBehaviour
     GameObject player;
 
     [SerializeField]
-    TextMeshPro scoreText;
+    TextMeshProUGUI scoreText;
 
     int score;
     public int GetScore
