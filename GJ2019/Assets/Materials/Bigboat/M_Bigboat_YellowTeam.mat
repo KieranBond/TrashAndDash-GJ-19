@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: M_Bigboat_GreenTeam
+  m_Name: M_Bigboat_YellowTeam
   m_Shader: {fileID: -6465566751694194690, guid: 06ba8ca773fbc394586bb30f6638a241,
     type: 3}
   m_ShaderKeywords: 
@@ -51,6 +51,6 @@ Material:
     m_Colors:
     - Color_B2449043: {r: 0, g: 0.269247, b: 0.5754717, a: 0}
     - Color_BD7DEC34: {r: 0.08675194, g: 1, b: 0, a: 0}
-    - Color_BE6355AF: {r: 1, g: 0.052130062, b: 0, a: 0}
+    - Color_BE6355AF: {r: 0.99215686, g: 1, b: 0, a: 0}
     - Color_D4775EC8: {r: 0, g: 0, b: 0, a: 0}
     - Color_FFCC3683: {r: 1, g: 0, b: 0, a: 0}

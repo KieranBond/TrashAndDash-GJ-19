@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2392850105861189829}
   m_Layer: 0
-  m_Name: prefab_BigBoat
+  m_Name: prefab_BigBoat_Base
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -102,7 +102,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 52a6f20a0a90cb54ab64e50c4041eb19, type: 2}
+      objectReference: {fileID: 2100000, guid: e73f38087075c3446a3c842a0ffe74dd, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 71a62aa31c063864ebfcbc462a5d7f7b, type: 3}
 --- !u!4 &8410072537291469815 stripped
