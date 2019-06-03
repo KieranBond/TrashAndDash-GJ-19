@@ -16,10 +16,16 @@ public class PlayerScore : MonoBehaviour
     private void Update()
     {
         scoreText.text = score.ToString();
+        LevelTimer.Instnace.TimerEnd += test;
     }
 
     public void InceremtnScore(int aScoreToAdd)
     {
         score += aScoreToAdd;
+    }
+
+    void test()
+    {
+
     }
 }

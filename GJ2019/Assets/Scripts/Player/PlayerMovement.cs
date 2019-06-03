@@ -22,6 +22,7 @@ public class PlayerMovement : MonoBehaviour
     public Rigidbody rigidbody;
     public float boostTime;
     private bool canSpeedBoost;
+    [SerializeField]
     private float acceleration = 1;
     public bool InvertX = false;
     public bool InvertY = false;

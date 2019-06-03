@@ -503,9 +503,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9bc44a196b7c0c4a8dc32a5b7dd9f53, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementSpeed: 50
+  movementSpeed: 0
   boostSpeed: 125
+  speed: 0
   playerIndex: 0
+  rigidbody: {fileID: 7910877916331189713}
   boostTime: 5
   InvertX: 1
   InvertY: 1
