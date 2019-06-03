@@ -25,9 +25,9 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField]
     private float acceleration = 1;
     [SerializeField]
-    private float deceleration = 1;
+    private float deceleration = 5;
     [SerializeField]
-    private float maxSpeed = 50;
+    private float maxSpeed = 20;
     public bool InvertX = false;
     public bool InvertY = false;
 
