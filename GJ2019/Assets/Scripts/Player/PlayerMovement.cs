@@ -24,6 +24,8 @@ public class PlayerMovement : MonoBehaviour
     private bool canSpeedBoost;
     [SerializeField]
     private float acceleration = 1;
+    [SerializeField]
+    private float maxSpeed = 50;
     public bool InvertX = false;
     public bool InvertY = false;
 
@@ -52,7 +54,7 @@ public class PlayerMovement : MonoBehaviour
                 speed -= 5.0f * Time.deltaTime;//movement * (speed -= acceleration * Time.deltaTime) * Time.deltaTime;
                 //rigidbody.velocity += boostSpeed * Vector3.forward;
             }
-            else if(speed <= 10)
+            else if(speed <= maxSpeed)
             {
                 speed += acceleration * Time.deltaTime;
                 //transform.position += movement * (speed += acceleration * Time.deltaTime) * Time.deltaTime;
