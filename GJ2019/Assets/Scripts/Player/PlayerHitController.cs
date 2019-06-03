@@ -26,14 +26,13 @@ public class PlayerHitController : MonoBehaviour
         {
             GetComponent<BoxCollider>().enabled = false;
 
-            //if (Input.GetButtonDown("Fire1"))
-            //{
             Vector3 opositeVector = other.transform.position - gameObject.transform.position;
             opositeVector *= force;
 
             other.attachedRigidbody.AddForce(opositeVector);
             gameObject.transform.parent.GetComponent<Rigidbody>().AddForce(-opositeVector);
-            //}
+
+            other.GetComponent<PlayerTrashCollect>().DropTrash();
         }
     }
 }

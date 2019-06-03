@@ -18,6 +18,9 @@ public class PlayerMovement : MonoBehaviour
     public float movementSpeed;
     public PlayerIndex playerIndex;
 
+    public bool InvertX = false;
+    public bool InvertY = false;
+
     // Update is called once per frame
     void Update()
     {
@@ -26,6 +29,15 @@ public class PlayerMovement : MonoBehaviour
         if (state.IsConnected)
         {
             Vector3 movement = new Vector3(state.ThumbSticks.Left.X, 0, state.ThumbSticks.Left.Y);
+            if(InvertX)
+            {
+                movement.x *= -1;
+            }
+            if(InvertY)
+            {
+                movement.z *= -1;
+            }
+
             transform.position += movement * movementSpeed * Time.deltaTime;
         
             if (movement != Vector3.zero)

@@ -9,6 +9,8 @@ public class PlayerTrashCollect : MonoBehaviour
     [SerializeField]
     GameObject playerBarge;
 
+    GameObject trashSpawnZone;
+
     int index;
 
     bool enterDropOff = false;
@@ -17,6 +19,7 @@ public class PlayerTrashCollect : MonoBehaviour
     void Start()
     {
         trash = new GameObject[5];
+        trashSpawnZone = GameObject.Find("TrashSpawnZone");
     }
 
     // Update is called once per frame
@@ -52,6 +55,16 @@ public class PlayerTrashCollect : MonoBehaviour
         return false;
     }
 
+    public void DropTrash()
+    {
+        if(index > 0)
+        {
+            trash[index - 1].transform.SetParent(trashSpawnZone.transform);
+            trash[index - 1].SetActive(true);
+            trash[index - 1] = null;
+            index--;
+        }
+    }
 
     private void OnTriggerEnter(Collider other)
     {
