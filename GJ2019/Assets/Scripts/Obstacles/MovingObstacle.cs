@@ -74,7 +74,7 @@ namespace GJ.Obstacles.Impl
 
             Vector3 startingPos = transform.position;
 
-            while (Vector3.Distance(transform.position, m_destinationPosition) > 0)
+            while (Vector3.Distance(transform.position, m_destinationPosition) > 0.25f)
             {
                 currentLerpTime += Time.deltaTime;
                 step = Easing.GetLerpT(EasingType, currentLerpTime, m_riseSinkDuration);
