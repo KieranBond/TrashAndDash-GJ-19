@@ -25,7 +25,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField]
     private float acceleration = 1;
     [SerializeField]
-    private float deacceleration = 1;
+    private float deceleration = 1;
     [SerializeField]
     private float maxSpeed = 50;
     public bool InvertX = false;
@@ -53,7 +53,7 @@ public class PlayerMovement : MonoBehaviour
             if(state.ThumbSticks.Left.X == 0 && state.ThumbSticks.Left.Y == 0 && speed >= movementSpeed)
             {
                // transform.position += movement * (speed -= acceleration * Time.deltaTime) * Time.deltaTime;
-                speed -= deacceleration * Time.deltaTime;//movement * (speed -= acceleration * Time.deltaTime) * Time.deltaTime;
+                speed -= deceleration * Time.deltaTime;//movement * (speed -= acceleration * Time.deltaTime) * Time.deltaTime;
                 //rigidbody.velocity += boostSpeed * Vector3.forward;
             }
             else if(speed <= maxSpeed)
@@ -63,7 +63,7 @@ public class PlayerMovement : MonoBehaviour
             }
             else
             {
-                speed = 10;
+                speed = maxSpeed;
                 //transform.position += movement * speed * Time.deltaTime;
             }
             newPosition = transform.position + -transform.up * speed * Time.deltaTime;
