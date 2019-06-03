@@ -63,7 +63,8 @@ namespace GJ.Obstacles.Impl
             if (m_movementRoutine != null)
                 StopAllCoroutines();
 
-            m_movementRoutine = StartCoroutine(SinkMovement());
+
+            //m_movementRoutine = StartCoroutine(SinkMovement());
         }
 
         private IEnumerator RiseMovement()
