@@ -3,26 +3,27 @@ using UnityEngine;
 
 namespace GJ.SpawningSystem
 {
-    public class TrashSpawner : MonoBehaviour
+    public class ObjectSpawner : MonoBehaviour
     {
-        [SerializeField] private GameObject m_spawnPrefab;
-        [SerializeField] private Transform m_spawnParent;
-        [SerializeField] private float m_spawnZoneWidth = 5f;
-        [SerializeField] private float m_spawnZoneLength = 5f;
+        [SerializeField] protected GameObject[] m_spawnPrefabs;
+        [SerializeField] protected Transform m_spawnParent;
+        [SerializeField] protected float m_spawnZoneWidth = 5f;
+        [SerializeField] protected float m_spawnZoneLength = 5f;
 
-        [SerializeField] private float m_minimumSpawnTime = 1f;
-        [SerializeField] private float m_maximumSpawnTime = 5f;
+        [SerializeField] protected float m_minimumSpawnTime = 1f;
+        [SerializeField] protected float m_maximumSpawnTime = 5f;
 
         public bool SpawnItems = true;
 
-        private Coroutine m_spawningRoutine;
+        protected Coroutine m_spawningRoutine;
+        protected GameObject m_lastSpawnedItem;
 
-        void OnEnable()
+        protected void OnEnable()
         {
             StartCoroutine(SpawnLoop());
         }
 
-        private IEnumerator SpawnLoop()
+        protected virtual IEnumerator SpawnLoop()
         {
             while(SpawnItems)
             {
@@ -33,14 +34,19 @@ namespace GJ.SpawningSystem
             }
         }
 
-        private IEnumerator SpawnItem()
+        protected virtual IEnumerator SpawnItem()
         {
             float waitTime = Random.Range(m_minimumSpawnTime, m_maximumSpawnTime);
 
             yield return new WaitForSeconds(waitTime);
 
-            GameObject spawnedItem = Instantiate(m_spawnPrefab, m_spawnParent);
+            //Choose the prefab to spawn
+            int chosenIndex = Random.Range(0, m_spawnPrefabs.Length);
+            GameObject spawnedItem = Instantiate(m_spawnPrefabs[chosenIndex], m_spawnParent);
+            m_lastSpawnedItem = spawnedItem;
 
+
+            //figure out where to start it.
             Vector3 spawnPosition = m_spawnParent.position;
 
             float spawnMinX = -m_spawnZoneWidth;
