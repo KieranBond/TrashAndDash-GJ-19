@@ -16,7 +16,10 @@ public class PlayerMovement : MonoBehaviour
 {
     private GamePadState state;
     public float movementSpeed;
+    public float boostSpeed;
+    private float speed;
     public PlayerIndex playerIndex;
+    private bool isSpeed;
 
     public bool InvertX = false;
     public bool InvertY = false;
@@ -29,6 +32,7 @@ public class PlayerMovement : MonoBehaviour
         if (state.IsConnected)
         {
             Vector3 movement = new Vector3(state.ThumbSticks.Left.X, 0, state.ThumbSticks.Left.Y);
+<<<<<<< Updated upstream:GJ2019/Assets/Scripts/Player/PlayerMovement.cs
             if(InvertX)
             {
                 movement.x *= -1;
@@ -39,11 +43,32 @@ public class PlayerMovement : MonoBehaviour
             }
 
             transform.position += movement * movementSpeed * Time.deltaTime;
+=======
+            transform.position += movement * speed * Time.deltaTime;
+>>>>>>> Stashed changes:GJ2019/Assets/Scripts/PlayerMovement.cs
         
             if (movement != Vector3.zero)
             {
                 transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(movement), Time.deltaTime * 10.0f);
             }
+
+            if(state.Buttons.RightShoulder == ButtonState.Pressed)
+            {
+                if(isSpeed)
+                {
+                    speed = boostSpeed;
+                }
+            }
+            else
+            {
+                speed = movementSpeed;
+            }
         }
+    }
+
+    private IEnumerator Wait()
+    {
+        speed = boostSpeed;
+        yield return new WaitForSeconds(2);
     }
 }
