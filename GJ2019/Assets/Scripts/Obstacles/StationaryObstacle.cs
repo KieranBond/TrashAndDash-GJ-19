@@ -103,7 +103,6 @@ namespace GJ.Obstacles.Impl
 
                 yield return new WaitForFixedUpdate();
             }
-            Debug.Log("Finsihed");
         }
 
         public EaseType GetEaseType()
