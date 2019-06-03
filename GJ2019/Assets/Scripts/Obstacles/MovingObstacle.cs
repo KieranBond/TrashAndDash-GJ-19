@@ -84,10 +84,12 @@ namespace GJ.Obstacles.Impl
                 yield return new WaitForFixedUpdate();
             }
 
-            //Testing
-            StopAllCoroutines();
+            //Sink then destroy
+            m_movementRoutine = StartCoroutine(SinkMovement());
+
+            yield return new WaitForSeconds(m_riseSinkDuration);
+
             Destroy(gameObject);
-            //Deactivate();
         }
 
         private IEnumerator RiseMovement()
