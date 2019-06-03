@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Copy_Me
+  m_Name: M_Bigboat
   m_Shader: {fileID: -6465566751694194690, guid: 06ba8ca773fbc394586bb30f6638a241,
     type: 3}
   m_ShaderKeywords: 
@@ -27,15 +27,15 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - Texture2D_60F00822:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: 0f4f2acb9cdd37d40b6816be8a201278, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - Texture2D_7CE6101B:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: 056ac2770d4283f4d862bcb4951969bb, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - Texture2D_93695D82:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: b6170fbc9ce3aca45b90ce0627c8a20e, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - Texture2D_A237D676:
@@ -43,7 +43,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - Texture2D_D0719D46:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: 40fe2d08f5c2840499fa213d44b1f9c3, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
