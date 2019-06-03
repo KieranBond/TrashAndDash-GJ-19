@@ -4,15 +4,7 @@
 PlayerSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 17
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-  productGUID: 1937a1f3c4263be44857ef8ba3686fc0
-=======
   productGUID: 3cc7a752828eaa247a134842a9f34b21
->>>>>>> Stashed changes
-=======
-  productGUID: 3cc7a752828eaa247a134842a9f34b21
->>>>>>> Stashed changes
   AndroidProfiler: 0
   AndroidFilterTouchesWhenObscured: 0
   AndroidEnableSustainedPerformanceMode: 0
@@ -74,7 +66,7 @@ PlayerSettings:
   androidStartInFullscreen: 1
   androidRenderOutsideSafeArea: 1
   androidUseSwappy: 0
-  androidBlitType: 0
+  androidBlitType: 1
   defaultIsNativeResolution: 1
   macRetinaSupport: 1
   runInBackground: 1
