@@ -510,6 +510,8 @@ MonoBehaviour:
   rigidbody: {fileID: 7910877916331189713}
   boostTime: 5
   acceleration: 5
+  deceleration: 5
+  maxSpeed: 50
   InvertX: 1
   InvertY: 1
 --- !u!114 &3777716072789516738
