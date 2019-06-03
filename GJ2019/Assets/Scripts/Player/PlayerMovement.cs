@@ -32,7 +32,6 @@ public class PlayerMovement : MonoBehaviour
         if (state.IsConnected)
         {
             Vector3 movement = new Vector3(state.ThumbSticks.Left.X, 0, state.ThumbSticks.Left.Y);
-<<<<<<< Updated upstream:GJ2019/Assets/Scripts/Player/PlayerMovement.cs
             if(InvertX)
             {
                 movement.x *= -1;
@@ -43,9 +42,6 @@ public class PlayerMovement : MonoBehaviour
             }
 
             transform.position += movement * movementSpeed * Time.deltaTime;
-=======
-            transform.position += movement * speed * Time.deltaTime;
->>>>>>> Stashed changes:GJ2019/Assets/Scripts/PlayerMovement.cs
         
             if (movement != Vector3.zero)
             {
