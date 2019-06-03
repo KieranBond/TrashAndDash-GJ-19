@@ -61,9 +61,9 @@ namespace GJ.SpawningSystem
             spawnedItem.transform.position = spawnPosition;
 
             //As we may use this for stationary obstacle spawning
-            if(spawnedItem.GetComponent<Obstacle>() != null)
+            if(spawnedItem.GetComponent<IObstacle>() != null)
             {
-                spawnedItem.GetComponent<Obstacle>().Play();
+                spawnedItem.GetComponent<IObstacle>().Play();
             }
 
             m_spawningRoutine = null;

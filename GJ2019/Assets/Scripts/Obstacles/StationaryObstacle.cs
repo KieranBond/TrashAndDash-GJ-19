@@ -2,11 +2,13 @@
 using GJ.Obstacles.Base;
 using System.Collections;
 using UnityEngine;
+using static GJ.HelperScripts.Easing;
 
 namespace GJ.Obstacles.Impl
 {
-    public class StationaryObstacle : Obstacle
+    public class StationaryObstacle : MonoBehaviour, IObstacle
     {
+        [SerializeField] private EaseType EasingType;
         [SerializeField] private float m_obstacleHeight = 5f;
 
         [SerializeField] private float m_riseMovementDuration = 3f;
@@ -31,7 +33,7 @@ namespace GJ.Obstacles.Impl
             m_loweredPosition = transform.position;
         }
 
-        public override void Play()
+        public void Play()
         {
             if (m_movementRoutine != null)
                 StopAllCoroutines();
@@ -46,7 +48,7 @@ namespace GJ.Obstacles.Impl
             m_movementRoutine = StartCoroutine(SinkMovement());
         }
 
-        public override void Activate()
+        public void Activate()
         {
             if (m_movementRoutine != null)
                 StopAllCoroutines();
@@ -54,7 +56,7 @@ namespace GJ.Obstacles.Impl
             m_movementRoutine = StartCoroutine(RiseMovement());
         }
 
-        public override void Deactivate()
+        public void Deactivate()
         {
             if (m_movementRoutine != null)
                 StopAllCoroutines();
@@ -98,6 +100,11 @@ namespace GJ.Obstacles.Impl
 
                 yield return new WaitForFixedUpdate();
             }
+        }
+
+        public EaseType GetEaseType()
+        {
+            return EasingType;
         }
 
         private void OnGUI()
