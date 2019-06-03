@@ -7,6 +7,8 @@ public class TrashInteract : MonoBehaviour
     [SerializeField]
     bool playerOverTrash = false;
     [SerializeField]
+    bool playerOverDropOff = false;
+    [SerializeField]
     GameObject player = null;
 
     void Update()
@@ -16,14 +18,18 @@ public class TrashInteract : MonoBehaviour
             //allow for pickup
             if(Input.GetButtonDown("Fire1"))
             {
-                //pickup trash
-                //assign trash to player
-                Debug.Log("Trash pickup");
-                player.GetComponent<PlayerScore>().InceremtnScore(1);
+                if (player.GetComponent<PlayerTrashCollect>().AddTrash(gameObject))
+                {
+                    //pickup trash
+                    //assign trash to player
+                    Debug.Log("Trash pickup");
 
-                playerOverTrash = false;
+                    playerOverTrash = false;
 
-                Destroy(gameObject);
+                    gameObject.transform.SetParent(player.transform);
+                    gameObject.SetActive(false);
+                    //Destroy(gameObject);
+                }
             }
         }
     }

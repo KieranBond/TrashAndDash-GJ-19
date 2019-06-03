@@ -4,28 +4,36 @@ using UnityEngine;
 
 public class PlayerHitController : MonoBehaviour
 {
-    // Start is called before the first frame update
+    [SerializeField]
+    float force = 50.0f;
+
     void Start()
     {
         
     }
 
-    // Update is called once per frame
     void Update()
     {
-        
+        if (Input.GetButtonDown("Fire1"))
+        {
+            GetComponent<BoxCollider>().enabled = !GetComponent<BoxCollider>().enabled;
+        }
     }
 
-    private void OnTriggerStay(Collider other)
+    private void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Player")
         {
-            if (Input.GetButtonDown("Fire1"))
-            {
-                Vector3 opositeVector = other.transform.position - gameObject.transform.position;
-                other.attachedRigidbody.AddForce(opositeVector, ForceMode.Force);
-                gameObject.GetComponent<Rigidbody>().AddForce(-opositeVector, ForceMode.Force);
-            }
+            GetComponent<BoxCollider>().enabled = false;
+
+            //if (Input.GetButtonDown("Fire1"))
+            //{
+            Vector3 opositeVector = other.transform.parent.position - gameObject.transform.parent.position;
+            opositeVector *= force;
+
+            other.attachedRigidbody.AddRelativeForce(opositeVector);
+            gameObject.transform.parent.GetComponent<Rigidbody>().AddRelativeForce(-opositeVector);
+            //}
         }
     }
 }
