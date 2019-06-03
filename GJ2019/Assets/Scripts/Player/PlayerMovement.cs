@@ -26,6 +26,8 @@ public class PlayerMovement : MonoBehaviour
     public bool InvertX = false;
     public bool InvertY = false;
 
+
+    private Vector3 newPosition;
     // Update is called once per frame
     void Update()
     {
@@ -59,8 +61,8 @@ public class PlayerMovement : MonoBehaviour
                 speed = 10;
                 //transform.position += movement * speed * Time.deltaTime;
             }
-
-            transform.position += -transform.up * speed * Time.deltaTime;
+            newPosition = transform.position + -transform.up * speed * Time.deltaTime;
+            
 
             if (movement != Vector3.zero)
             {
@@ -98,4 +100,8 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
+    private void FixedUpdate()
+    {
+        rigidbody.MovePosition(transform.position += -transform.up * speed * Time.deltaTime);
+    }
 }
