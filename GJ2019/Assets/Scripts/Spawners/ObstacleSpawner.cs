@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using GJ.Obstacles.Base;
+using System.Collections;
 using UnityEngine;
 
 namespace GJ.SpawningSystem
@@ -57,7 +58,7 @@ namespace GJ.SpawningSystem
 
             spawnedItem.transform.position = spawnPosition;
 
-            spawnedItem.GetComponent<Obstacle>().Activate();
+            spawnedItem.GetComponent<Obstacle>().Play();
 
             m_spawningRoutine = null;
         }
