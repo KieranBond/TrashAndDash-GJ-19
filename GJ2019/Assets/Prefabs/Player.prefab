@@ -26,8 +26,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 619095770963430945}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.012799978, y: 0, z: 0.876}
-  m_LocalScale: {x: 1.19184, y: 0.9439426, z: 1.9048091}
+  m_LocalPosition: {x: 0.012799978, y: -36.1, z: 2.75}
+  m_LocalScale: {x: 19.682047, y: 29.60673, z: 2.993979}
   m_Children: []
   m_Father: {fileID: 8580786005224089279}
   m_RootOrder: 0
@@ -85,16 +85,16 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5087029486798162807}
-  m_LocalRotation: {x: -0.00000041213778, y: -0.99144495, z: 0.13052599, w: 0.00000021958601}
-  m_LocalPosition: {x: 0, y: 0, z: -0.0066645145}
-  m_LocalScale: {x: 0.5, y: 1, z: 0.25}
+  m_LocalRotation: {x: 0.50000036, y: -0, z: -0, w: 0.8660252}
+  m_LocalPosition: {x: 0, y: 0, z: 12.931}
+  m_LocalScale: {x: 4.8246, y: 4.8246, z: 4.8246}
   m_Children: []
   m_Father: {fileID: 8580786005224089279}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 15.000001, y: -180.00002, z: 0}
+  m_LocalEulerAnglesHint: {x: 60.000004, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.01219964, y: 2.7398005}
+  m_AnchoredPosition: {x: -0.00018978, y: -23.19}
   m_SizeDelta: {x: 5, y: 1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!23 &2959681346007941542
@@ -293,15 +293,15 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6148191860904149503}
-  m_LocalRotation: {x: -0.00000061094755, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.5256004, y: -0.4600525, z: 0.79480076}
+  m_LocalRotation: {x: -0.70710677, y: -0, z: -0, w: 0.7071068}
+  m_LocalPosition: {x: -1.5256004, y: -18.946312, z: -12.558757}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 8025829807904596911}
   - {fileID: 6951547145008202692}
   m_Father: {fileID: 5631996163524138354}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -90.00001, y: 0, z: 0}
 --- !u!33 &7208182799133742423
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -390,6 +390,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movementSpeed: 50
+  boostSpeed: 0
   playerIndex: 0
   InvertX: 1
   InvertY: 1
