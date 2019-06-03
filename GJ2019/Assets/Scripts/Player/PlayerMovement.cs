@@ -46,7 +46,7 @@ public class PlayerMovement : MonoBehaviour
             if(state.ThumbSticks.Left.X == 0 && state.ThumbSticks.Left.Y == 0 && speed >= movementSpeed)
             {
                // transform.position += movement * (speed -= acceleration * Time.deltaTime) * Time.deltaTime;
-                speed -= acceleration * Time.deltaTime;//movement * (speed -= acceleration * Time.deltaTime) * Time.deltaTime;
+                speed -= 5.0f * Time.deltaTime;//movement * (speed -= acceleration * Time.deltaTime) * Time.deltaTime;
                 //rigidbody.velocity += boostSpeed * Vector3.forward;
             }
             else if(speed <= 10)
