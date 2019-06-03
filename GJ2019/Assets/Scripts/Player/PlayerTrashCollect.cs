@@ -10,6 +10,9 @@ public class PlayerTrashCollect : MonoBehaviour
     [SerializeField]
     GameObject playerBarge;
 
+    [SerializeField]
+    int maxTrashCount = 3;
+
     GameObject trashSpawnZone;
 
     int index;
@@ -22,7 +25,7 @@ public class PlayerTrashCollect : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        trash = new GameObject[5];
+        trash = new GameObject[maxTrashCount];
         trashSpawnZone = GameObject.Find("TrashSpawnZone");
     }
 
@@ -54,7 +57,7 @@ public class PlayerTrashCollect : MonoBehaviour
 
     public bool AddTrash(GameObject aTrash)
     {
-        if (index < 5)
+        if (index < maxTrashCount)
         {
             trash[index] = aTrash;
             index++;

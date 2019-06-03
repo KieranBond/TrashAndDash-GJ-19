@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Linq;
 using TMPro;
 
 public class LevelTimer : MonoBehaviour
@@ -14,7 +15,7 @@ public class LevelTimer : MonoBehaviour
     float currentTime;
 
     [SerializeField]
-    TextMeshPro timerText;
+    TextMeshProUGUI timerText;
 
     public delegate void OnTimerEnd();
     public OnTimerEnd TimerEnd;
@@ -30,6 +31,10 @@ public class LevelTimer : MonoBehaviour
         {
             Destroy(this);
         }
+
+        TimerEnd += OnTimerOver;
+
+        OnTimerStart();
     }
 
     // Update is called once per frame
@@ -42,5 +47,32 @@ public class LevelTimer : MonoBehaviour
         {
             TimerEnd();
         }
+    }
+
+    public void OnTimerStart()
+    {
+        currentTime = startTime;
+    }
+
+    public void OnTimerOver()
+    {
+        PlayerScore[] playerScores = FindObjectsOfType<PlayerScore>();
+
+        List<int> scores = new List<int>();
+        for (int i = 0; i < playerScores.Length; i++)
+        {
+            scores.Add(playerScores[i].GetScore);
+        }
+
+        //sort scores
+        scores.Sort();
+        scores.Reverse();
+
+        foreach (var item in scores)
+        {
+            Debug.Log(item);
+        }
+
+        OnTimerStart();
     }
 }

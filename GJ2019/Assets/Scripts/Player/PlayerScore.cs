@@ -12,20 +12,16 @@ public class PlayerScore : MonoBehaviour
     TextMeshPro scoreText;
 
     int score;
+    public int GetScore
+    { get { return score; } }
 
     private void Update()
     {
         scoreText.text = score.ToString();
-        LevelTimer.Instnace.TimerEnd += test;
     }
 
     public void InceremtnScore(int aScoreToAdd)
     {
         score += aScoreToAdd;
-    }
-
-    void test()
-    {
-
     }
 }

@@ -63,7 +63,7 @@ public class PlayerMovement : MonoBehaviour
             }
             else
             {
-                speed = 10;
+                speed = maxSpeed;
                 //transform.position += movement * speed * Time.deltaTime;
             }
             newPosition = transform.position + -transform.up * speed * Time.deltaTime;
@@ -108,5 +108,10 @@ public class PlayerMovement : MonoBehaviour
     private void FixedUpdate()
     {
         rigidbody.MovePosition(transform.position += -transform.up * speed * Time.deltaTime);
+    }
+
+    void AttachAnimFin()
+    {
+        GetComponentInChildren<PlayerHitController>().SetCollider(false);
     }
 }
