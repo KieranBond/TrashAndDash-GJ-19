@@ -548,7 +548,7 @@ MonoBehaviour:
   boostTime: 5
   acceleration: 5
   deceleration: 5
-  maxSpeed: 50
+  maxSpeed: 25
   InvertX: 1
   InvertY: 1
 --- !u!114 &3777716072789516738
@@ -5391,21 +5391,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Char_Anim_V2
       objectReference: {fileID: 0}
-    - target: {fileID: -7495850956840845810, guid: 3351c26dcfb23d842b555ab85df318ca,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 5c81f45728d71414582fdf6436ade20d, type: 2}
-    - target: {fileID: -5381965609551279274, guid: 3351c26dcfb23d842b555ab85df318ca,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 5c81f45728d71414582fdf6436ade20d, type: 2}
-    - target: {fileID: -4694338623589209743, guid: 3351c26dcfb23d842b555ab85df318ca,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: b6065654e13121b4689e8cfc23d0b666, type: 2}
     - target: {fileID: -4216859302048453862, guid: 3351c26dcfb23d842b555ab85df318ca,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -5476,12 +5461,27 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 10.239603
       objectReference: {fileID: 0}
+    - target: {fileID: -4694338623589209743, guid: 3351c26dcfb23d842b555ab85df318ca,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: b6065654e13121b4689e8cfc23d0b666, type: 2}
+    - target: {fileID: -7495850956840845810, guid: 3351c26dcfb23d842b555ab85df318ca,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 5c81f45728d71414582fdf6436ade20d, type: 2}
     - target: {fileID: -1657578930742480399, guid: 3351c26dcfb23d842b555ab85df318ca,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 5c81f45728d71414582fdf6436ade20d, type: 2}
     - target: {fileID: 1442477315262443259, guid: 3351c26dcfb23d842b555ab85df318ca,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 5c81f45728d71414582fdf6436ade20d, type: 2}
+    - target: {fileID: -5381965609551279274, guid: 3351c26dcfb23d842b555ab85df318ca,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
