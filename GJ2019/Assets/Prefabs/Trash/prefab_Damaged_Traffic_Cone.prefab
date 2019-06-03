@@ -44,8 +44,7 @@ MonoBehaviour:
 --- !u!1 &8592522360599766640
 GameObject:
   m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 2540487000737187615, guid: 02bb3a0cd93afd04c87c2d5af0abdba1,
-    type: 3}
+  m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
@@ -61,8 +60,7 @@ GameObject:
 --- !u!4 &8949407062499997695
 Transform:
   m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 7958712488081968543, guid: 02bb3a0cd93afd04c87c2d5af0abdba1,
-    type: 3}
+  m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8592522360599766640}
