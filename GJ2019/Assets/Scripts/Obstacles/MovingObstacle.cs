@@ -83,6 +83,11 @@ namespace GJ.Obstacles.Impl
 
                 yield return new WaitForFixedUpdate();
             }
+
+            //Testing
+            StopAllCoroutines();
+            Destroy(gameObject);
+            //Deactivate();
         }
 
         private IEnumerator RiseMovement()

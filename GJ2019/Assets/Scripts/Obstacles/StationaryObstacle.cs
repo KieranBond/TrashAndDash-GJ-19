@@ -61,7 +61,8 @@ namespace GJ.Obstacles.Impl
             if (m_movementRoutine != null)
                 StopAllCoroutines();
 
-            m_movementRoutine = StartCoroutine(SinkMovement());
+
+            //m_movementRoutine = StartCoroutine(SinkMovement());
         }
 
         private IEnumerator RiseMovement()
@@ -89,10 +90,6 @@ namespace GJ.Obstacles.Impl
             float currentLerpTime = 0f;
 
             Vector3 startingPos = transform.position;
-
-            //testing
-            Deactivate();
-            Destroy(gameObject);
 
             while (Vector3.Distance(transform.position, m_loweredPosition) > 0)
             {
