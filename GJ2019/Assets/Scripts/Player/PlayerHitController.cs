@@ -1,22 +1,25 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using XInputDotNetPure;
 
 public class PlayerHitController : MonoBehaviour
 {
     [SerializeField]
     float force = 50.0f;
 
-    void Start()
-    {
-        
-    }
-
     void Update()
     {
-        if (Input.GetButtonDown("Fire1"))
+        GamePadState state = GamePad.GetState(GetComponent<PlayerMovement>().playerIndex);
+
+        if (state.IsConnected)
         {
-            GetComponent<BoxCollider>().enabled = !GetComponent<BoxCollider>().enabled;
+            GamePadState prevState = state;
+            state = GamePad.GetState(GetComponent<PlayerMovement>().playerIndex);
+            if (prevState.Buttons.A == ButtonState.Released && state.Buttons.A == ButtonState.Pressed)
+            {
+                GetComponent<BoxCollider>().enabled = !GetComponent<BoxCollider>().enabled;
+            }
         }
     }
 
