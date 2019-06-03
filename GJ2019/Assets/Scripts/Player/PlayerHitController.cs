@@ -10,12 +10,12 @@ public class PlayerHitController : MonoBehaviour
 
     void Update()
     {
-        GamePadState state = GamePad.GetState(GetComponent<PlayerMovement>().playerIndex);
+        GamePadState state = GamePad.GetState(transform.parent.GetComponent<PlayerMovement>().playerIndex);
 
         if (state.IsConnected)
         {
             GamePadState prevState = state;
-            state = GamePad.GetState(GetComponent<PlayerMovement>().playerIndex);
+            state = GamePad.GetState(transform.parent.GetComponent<PlayerMovement>().playerIndex);
             if (prevState.Buttons.A == ButtonState.Released && state.Buttons.A == ButtonState.Pressed)
             {
                 GetComponent<BoxCollider>().enabled = !GetComponent<BoxCollider>().enabled;
