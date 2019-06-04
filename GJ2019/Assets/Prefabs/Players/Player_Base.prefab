@@ -412,7 +412,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 1
-  m_Constraints: 84
+  m_Constraints: 126
   m_CollisionDetection: 2
 --- !u!114 &2246781054745899063
 MonoBehaviour:
@@ -432,8 +432,8 @@ MonoBehaviour:
   playerIndex: 0
   rigidbody: {fileID: 7910877916331189713}
   boostTime: 5
-  acceleration: 5
-  deceleration: 5
+  acceleration: 10
+  deceleration: 10
   maxSpeed: 20
   InvertX: 0
   InvertY: 0
