@@ -177,6 +177,19 @@ MonoBehaviour:
   - {fileID: 1800486969693464614, guid: 125c0b2e16bf0ab48874bcae1f548cf3, type: 3}
   spawnParent: {fileID: 0}
   spawnPosition: {fileID: 2204584175639708218}
+--- !u!65 &8434251957497932816
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7458482716285525386}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 11.366564, y: 5.5180755, z: 7.528027}
+  m_Center: {x: -1.0558872, y: 0.00000011920932, z: 2.704864}
 --- !u!1001 &8433150151936821487
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -270,6 +283,12 @@ GameObject:
 --- !u!4 &4616699854476602425 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3826161304684799190, guid: 903d546a14fb4654f8d92b0fe93441bd,
+    type: 3}
+  m_PrefabInstance: {fileID: 8433150151936821487}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &7458482716285525386 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1335682200207562085, guid: 903d546a14fb4654f8d92b0fe93441bd,
     type: 3}
   m_PrefabInstance: {fileID: 8433150151936821487}
   m_PrefabAsset: {fileID: 0}

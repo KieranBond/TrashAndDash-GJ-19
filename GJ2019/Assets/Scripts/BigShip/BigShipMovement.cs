@@ -52,11 +52,6 @@ public class BigShipMovement : MonoBehaviour
         }
     }
 
-    public void StartMoving()
-    {
-        SetIsMoving();
-    }
-
     Vector3 RandomPositionInBounds(Bounds aBounds)
     {
         return new Vector3(
