@@ -105,6 +105,12 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
+    private void LateUpdate()
+    {
+        transform.position = new Vector3(transform.position.x, 0.0f, transform.position.z);
+        transform.rotation = Quaternion.Euler(-90, transform.rotation.eulerAngles.y, transform.rotation.eulerAngles.z);
+    }
+
     private void FixedUpdate()
     {
         rigidbody.MovePosition(transform.position += -transform.up * speed * Time.deltaTime);
