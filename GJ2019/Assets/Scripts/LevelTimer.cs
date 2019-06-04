@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
 using TMPro;
+using UnityEngine.UI;
 
 public class LevelTimer : MonoBehaviour
 {
@@ -27,6 +28,9 @@ public class LevelTimer : MonoBehaviour
     [SerializeField]
     GameObject playAgainButton;
 
+    [SerializeField]
+    private CanvasGroup m_gameOverCG;
+
     public delegate void OnTimerEnd();
     public OnTimerEnd TimerEnd;
 
@@ -47,6 +51,9 @@ public class LevelTimer : MonoBehaviour
 
         TimerEnd += OnTimerOver;
 
+
+        m_gameOverCG.alpha = 0;
+
         OnTimerStart();
     }
 
@@ -58,7 +65,7 @@ public class LevelTimer : MonoBehaviour
             timerText.text = "Time Left: " + currentTime.ToString("F2");
             currentTime -= 1.0f * Time.deltaTime;
 
-            if (currentTime <= 0.0f)
+            if (currentTime < 0.0f)
             {
                 tickDown = false;
                 TimerEnd();
@@ -108,20 +115,57 @@ public class LevelTimer : MonoBehaviour
             scorePlaceText[i].text = text;
         }
 
-        scoreBoard.SetActive(true);
-        playAgainButton.SetActive(true);
+        StartCoroutine(ShowGameOver());
+        
+    }
+
+    private IEnumerator ShowGameOver()
+    {
+        float step = 0f;
+
+        do
+        {
+            step += Time.deltaTime / 2f;//Over 2 seconds
+            m_gameOverCG.alpha = step;
+            yield return null;
+        }
+        while (m_gameOverCG.alpha < 1f);
+
+        m_gameOverCG.interactable = true;
 
         Time.timeScale = 0.0f;
+
+        //scoreBoard.SetActive(true);
+        //playAgainButton.SetActive(true);
+        playAgainButton.GetComponent<Button>().Select();
+
     }
 
     public void PlayAgainButton()
     {
-        scoreBoard.SetActive(false);
-        playAgainButton.SetActive(false);
+        StartCoroutine(RestartGame());
+    }
 
-        PlayAgain();
+    private IEnumerator RestartGame()
+    {
+        m_gameOverCG.interactable = false;
         Time.timeScale = 1.0f;
 
+        float step = 1f;
+        do
+        {
+            step -= Time.deltaTime / 1f;
+            m_gameOverCG.alpha = step;
+            yield return null;
+        }
+        while (m_gameOverCG.alpha > 0f);
+
+        //scoreBoard.SetActive(false);
+        //playAgainButton.SetActive(false);
+
+        PlayAgain();
+
         OnTimerStart();
+
     }
 }
