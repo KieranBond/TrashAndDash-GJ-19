@@ -20,8 +20,11 @@ namespace GJ.SpawningSystem
         protected Coroutine m_spawningRoutine;
         protected GameObject m_lastSpawnedItem;
 
+        private AudioSource m_audioSource;
+
         protected void OnEnable()
         {
+            m_audioSource = GetComponent<AudioSource>();
             StartCoroutine(SpawnLoop());
         }
 
@@ -60,6 +63,11 @@ namespace GJ.SpawningSystem
             spawnPosition.z = Random.Range(spawnMinZ, spawnMaxZ);
 
             spawnedItem.transform.localPosition = spawnPosition;
+
+            if(m_audioSource != null)
+            {
+                m_audioSource.Play();
+            }
 
             //As we may use this for stationary obstacle spawning
             if(spawnedItem.GetComponent<IObstacle>() != null)
