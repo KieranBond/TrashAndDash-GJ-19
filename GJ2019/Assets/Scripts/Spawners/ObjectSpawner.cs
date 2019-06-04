@@ -1,4 +1,5 @@
 ﻿using GJ.Obstacles.Base;
+using GJ.Obstacles.Impl;
 using System.Collections;
 using UnityEngine;
 
@@ -64,6 +65,13 @@ namespace GJ.SpawningSystem
             if(spawnedItem.GetComponent<IObstacle>() != null)
             {
                 spawnedItem.GetComponent<IObstacle>().Play();
+            }
+            else
+            {
+                StationaryObstacle so = spawnedItem.AddComponent<StationaryObstacle>();
+                so.Setup(spawnedItem.transform.localScale.y);
+                so.Play();
+
             }
 
             m_spawningRoutine = null;

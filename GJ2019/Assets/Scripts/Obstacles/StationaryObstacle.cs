@@ -21,6 +21,14 @@ namespace GJ.Obstacles.Impl
 
         private Coroutine m_movementRoutine;
 
+        public void Setup(float a_height = 5f, float a_riseDuration = 3f, float a_sinkDuration = 2f, float a_stayDuration = 5f)
+        {
+            m_obstacleHeight = a_height;
+            m_riseMovementDuration = a_riseDuration;
+            m_sinkMovementDuration = a_sinkDuration;
+            m_stayDuration = a_stayDuration;
+        }
+
         public void Play()
         {
             if (m_movementRoutine != null)
