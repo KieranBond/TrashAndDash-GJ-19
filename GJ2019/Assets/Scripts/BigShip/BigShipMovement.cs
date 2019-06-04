@@ -38,7 +38,7 @@ public class BigShipMovement : MonoBehaviour
             Vector3 dir = startPosition.position - endPosition.position;
             transform.position += -dir * movementSpeed * Time.deltaTime;
 
-            if (Vector3.Distance(transform.position, endPosition.position) < 0.1f)
+            if (Vector2.Distance(new Vector2(transform.position.x, transform.position.z), new Vector2(endPosition.position.x, endPosition.position.z)) < 3.0f)
             {
                 StopCoroutine(c);
                 c = null;
