@@ -110,6 +110,8 @@ public class LevelTimer : MonoBehaviour
 
         scoreBoard.SetActive(true);
         playAgainButton.SetActive(true);
+
+        Time.timeScale = 0.0f;
     }
 
     public void PlayAgainButton()
@@ -118,6 +120,7 @@ public class LevelTimer : MonoBehaviour
         playAgainButton.SetActive(false);
 
         PlayAgain();
+        Time.timeScale = 1.0f;
 
         OnTimerStart();
     }
