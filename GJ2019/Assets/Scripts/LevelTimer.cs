@@ -14,6 +14,8 @@ public class LevelTimer : MonoBehaviour
     float startTime = 60.0f;
     float currentTime;
 
+    bool tickDown = true;
+
     [SerializeField]
     TextMeshProUGUI timerText;
 
@@ -44,7 +46,6 @@ public class LevelTimer : MonoBehaviour
         }
 
         TimerEnd += OnTimerOver;
-        PlayAgain += PlayAgainButton;
 
         OnTimerStart();
     }
@@ -52,18 +53,23 @@ public class LevelTimer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        timerText.text = "Time Left: " + currentTime.ToString("F2");
-        currentTime -= 1.0f * Time.deltaTime;
-
-        if(currentTime <= 0.0f)
+        if (tickDown)
         {
-            TimerEnd();
+            timerText.text = "Time Left: " + currentTime.ToString("F2");
+            currentTime -= 1.0f * Time.deltaTime;
+
+            if (currentTime <= 0.0f)
+            {
+                tickDown = false;
+                TimerEnd();
+            }
         }
     }
 
     public void OnTimerStart()
     {
         currentTime = startTime;
+        tickDown = true;
     }
 
     public void OnTimerOver()
@@ -86,16 +92,16 @@ public class LevelTimer : MonoBehaviour
             switch (i)
             {
                 case 0:
-                    text = "1st Place: " + playerScores[i].PlayerMovement.Colour() + " " + scores;
+                    text = "1st Place: " + playerScores[i].PlayerMovement.Colour() + " " + scores[i];
                     break;
                 case 1:
-                    text = "2nd Place: " + playerScores[i].PlayerMovement.Colour() + " " + scores;
+                    text = "2nd Place: " + playerScores[i].PlayerMovement.Colour() + " " + scores[i];
                     break;
                 case 2:
-                    text = "3rd Place: " + playerScores[i].PlayerMovement.Colour() + " " + scores;
+                    text = "3rd Place: " + playerScores[i].PlayerMovement.Colour() + " " + scores[i];
                     break;
                 case 3:
-                    text = "4th Place: " + playerScores[i].PlayerMovement.Colour() + " " + scores;
+                    text = "4th Place: " + playerScores[i].PlayerMovement.Colour() + " " + scores[i];
                     break;
             }
 
@@ -104,14 +110,14 @@ public class LevelTimer : MonoBehaviour
 
         scoreBoard.SetActive(true);
         playAgainButton.SetActive(true);
-
-        PlayAgain();
     }
 
-    void PlayAgainButton()
+    public void PlayAgainButton()
     {
         scoreBoard.SetActive(false);
         playAgainButton.SetActive(false);
+
+        PlayAgain();
 
         OnTimerStart();
     }
