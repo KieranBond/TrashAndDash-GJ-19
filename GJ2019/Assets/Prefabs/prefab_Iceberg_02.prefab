@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5390776265527990169}
-  - component: {fileID: 222535921553143789}
+  - component: {fileID: 7309451134724246690}
   m_Layer: 0
   m_Name: prefab_Iceberg_02
   m_TagString: Untagged
@@ -32,7 +32,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &222535921553143789
+--- !u!114 &7309451134724246690
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -41,14 +41,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 7555017036073043482}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8765bc0920a274c42a803cc3405d58f5, type: 3}
+  m_Script: {fileID: 11500000, guid: aa825fdea1749eb45a924fffbe1f3c67, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   EasingType: 0
   m_obstacleHeight: 5
-  m_startDelay: 0
-  m_moveDuration: 5
-  m_riseSinkDuration: 2
+  m_riseMovementDuration: 3
+  m_sinkMovementDuration: 2
+  m_stayDuration: 5
 --- !u!1001 &5366725723345146911
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -64,7 +64,7 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: 4c912bbcde2546040bbcbb39e0460b57,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.058937084
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 4c912bbcde2546040bbcbb39e0460b57,
         type: 3}
@@ -74,7 +74,7 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: 4c912bbcde2546040bbcbb39e0460b57,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.058093406
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 4c912bbcde2546040bbcbb39e0460b57,
         type: 3}

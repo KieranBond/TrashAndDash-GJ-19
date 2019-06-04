@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5273212393348113411}
-  - component: {fileID: -1694048448442882978}
+  - component: {fileID: 5063518584739770383}
   m_Layer: 0
   m_Name: prefab_Iceberg_04
   m_TagString: Untagged
@@ -32,7 +32,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &-1694048448442882978
+--- !u!114 &5063518584739770383
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -41,14 +41,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 3140619519461885853}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8765bc0920a274c42a803cc3405d58f5, type: 3}
+  m_Script: {fileID: 11500000, guid: aa825fdea1749eb45a924fffbe1f3c67, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   EasingType: 0
   m_obstacleHeight: 5
-  m_startDelay: 0
-  m_moveDuration: 5
-  m_riseSinkDuration: 2
+  m_riseMovementDuration: 3
+  m_sinkMovementDuration: 2
+  m_stayDuration: 5
 --- !u!1001 &4938108948513371624
 PrefabInstance:
   m_ObjectHideFlags: 0
