@@ -1088,6 +1088,53 @@ MonoBehaviour:
       data2: 0
   defaultFrameSettings: 0
 --- !u!114 &310194733
+--- !u!4 &352086059 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2368300974827159738, guid: db8b5c7f36bb95d44997e3c5922f4168,
+    type: 3}
+  m_PrefabInstance: {fileID: 786546885}
+  m_PrefabAsset: {fileID: 0}
+--- !u!225 &386946223 stripped
+CanvasGroup:
+  m_CorrespondingSourceObject: {fileID: 3566025358723731725, guid: 0e2de8e298b4c8249ae3b3b219dac11b,
+    type: 3}
+  m_PrefabInstance: {fileID: 1631898067737098882}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &510235212
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 510235213}
+  - component: {fileID: 510235217}
+  - component: {fileID: 510235216}
+  - component: {fileID: 510235215}
+  - component: {fileID: 510235214}
+  m_Layer: 0
+  m_Name: BigShipModel
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &510235213
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 510235212}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -34, y: 2, z: 13.871323}
+  m_LocalScale: {x: 15.416, y: 15.416, z: 15.416}
+  m_Children: []
+  m_Father: {fileID: 2054938267}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &510235214
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1106,6 +1153,23 @@ MonoBehaviour:
   sharedProfile: {fileID: 11400000, guid: 1296fd296da3d8d4f97104b59caeb726, type: 2}
 --- !u!82 &310194734
 AudioSource:
+  startPosition: {fileID: 0}
+  endPosition: {fileID: 0}
+  movementSpeed: 0.1
+  isMoving: 0
+  spawPrefabs:
+  - {fileID: 4021369223595117407, guid: 6d1925a3af419c24784734fad8beb62d, type: 3}
+  - {fileID: 4021369223595117407, guid: 955fc1f4c8da01045a77473da7c572a5, type: 3}
+  - {fileID: 2286917933837992087, guid: f248f1fa70516d9429c13b563ff7b40e, type: 3}
+  - {fileID: 2286917933837992087, guid: 491f054964ba35d4989e8690a45def09, type: 3}
+  - {fileID: 8451498334539564336, guid: fba1bce6f68eb3041b8d4719e3c6bc7e, type: 3}
+  - {fileID: 8592522360599766640, guid: 02bb3a0cd93afd04c87c2d5af0abdba1, type: 3}
+  - {fileID: 403701534529038744, guid: 46f9eeb07a1736a4cb5b664572e1becc, type: 3}
+  - {fileID: 1800486969693464614, guid: 125c0b2e16bf0ab48874bcae1f548cf3, type: 3}
+  spawnParent: {fileID: 12787451}
+  spawnPosition: {fileID: 0}
+--- !u!65 &510235215
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -1905,6 +1969,10 @@ RectTransform:
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 1089.1, y: 1089.1}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &739205183
 MonoBehaviour:
@@ -3395,6 +3463,7 @@ Light:
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
   m_BoundingSphereOverride: {x: 0.0546875, y: 0.078125, z: 0.02734375, w: -0.03515625}
+  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 3.397555e-39}
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
