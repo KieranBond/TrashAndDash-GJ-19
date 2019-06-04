@@ -427,13 +427,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movementSpeed: 0
-  boostSpeed: 125
+  boostSpeed: 25
   speed: 0
   playerIndex: 0
   rigidbody: {fileID: 7910877916331189713}
   boostTime: 5
   acceleration: 10
-  deceleration: 10
+  deceleration: 15
   maxSpeed: 20
   InvertX: 0
   InvertY: 0
