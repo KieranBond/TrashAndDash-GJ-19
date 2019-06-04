@@ -5,7 +5,7 @@ using UnityEngine;
 public class MainMenuUI : MonoBehaviour
 {
     [SerializeField]
-    GameObject gameObject;
+    GameObject gameAssets;
     [SerializeField]
     GameObject evnAssets;
 
@@ -26,7 +26,7 @@ public class MainMenuUI : MonoBehaviour
     public void PlayGame()
     {
         evnAssets.SetActive(false);
-        gameObject.SetActive(true);
+        gameAssets.SetActive(true);
         gameObject.SetActive(false);
     }
 
