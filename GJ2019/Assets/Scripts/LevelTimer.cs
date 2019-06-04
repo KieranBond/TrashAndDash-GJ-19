@@ -88,32 +88,33 @@ public class LevelTimer : MonoBehaviour
 
         PlayerScore[] playerScores = FindObjectsOfType<PlayerScore>();
 
-        List<int> scores = new List<int>();
-        for (int i = 0; i < playerScores.Length; i++)
-        {
-            scores.Add(playerScores[i].GetScore);
-        }
+        List<PlayerScore> scores = new List<PlayerScore>(playerScores.ToList());
+        scores.Sort((a, b) => { return a.GetScore.CompareTo(b.GetScore); });
+        scores.Reverse();
+        //for (int i = 0; i < playerScores.Length; i++)
+        //{
+        //    scores.Add(playerScores[i].GetScore);
+        //}
 
         //sort scores
-        scores.Sort();
-        scores.Reverse();
+        //scores.Sort();
 
-        for (int i = 0; i < scorePlaceText.Length; i++)
+        for (int i = 0; i < scores.Count; i++)
         {
             string text = "";
             switch (i)
             {
                 case 0:
-                    text = "1st Place: " + playerScores[i].PlayerMovement.Colour() + " " + scores[i];
+                    text = "1st Place: " + scores[i].PlayerMovement.Colour() + " " + scores[i].GetScore;
                     break;
                 case 1:
-                    text = "2nd Place: " + playerScores[i].PlayerMovement.Colour() + " " + scores[i];
+                    text = "2nd Place: " + scores[i].PlayerMovement.Colour() + " " + scores[i].GetScore;
                     break;
                 case 2:
-                    text = "3rd Place: " + playerScores[i].PlayerMovement.Colour() + " " + scores[i];
+                    text = "3rd Place: " + scores[i].PlayerMovement.Colour() + " " + scores[i].GetScore;
                     break;
                 case 3:
-                    text = "4th Place: " + playerScores[i].PlayerMovement.Colour() + " " + scores[i];
+                    text = "4th Place: " + scores[i].PlayerMovement.Colour() + " " + scores[i].GetScore;
                     break;
             }
 

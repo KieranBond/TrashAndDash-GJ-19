@@ -32,6 +32,8 @@ public class PlayerTrashCollect : MonoBehaviour
     {
         trash = new GameObject[maxTrashCount];
         trashSpawnZone = GameObject.Find("TrashSpawner");
+
+        LevelTimer.Instnace.PlayAgain += OnPlayAgain;
     }
 
     // Update is called once per frame
@@ -83,6 +85,19 @@ public class PlayerTrashCollect : MonoBehaviour
             trash[index - 1].SetActive(true);
             trash[index - 1] = null;
             index--;
+        }
+    }
+
+    void OnPlayAgain()
+    {
+        for (int i = 0; i < trash.Length; i++)
+        {
+            if (trash[i] != null)
+            {
+                Destroy(trash[i]);
+                trash[i] = null;
+            }
+            visualScore[i].SetActive(false);
         }
     }
 
