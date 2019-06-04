@@ -81,6 +81,9 @@ public class LevelTimer : MonoBehaviour
 
     public void OnTimerOver()
     {
+        currentTime = 0f;
+        timerText.text = "Time Left: " + currentTime.ToString("F2");
+
         PlayerScore[] playerScores = FindObjectsOfType<PlayerScore>();
 
         List<int> scores = new List<int>();
