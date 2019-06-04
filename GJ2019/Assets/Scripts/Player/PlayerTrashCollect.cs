@@ -10,7 +10,10 @@ public class PlayerTrashCollect : MonoBehaviour
     [SerializeField]
     GameObject playerBarge;
     [SerializeField]
+    GameObject[] visualScore;
+    [SerializeField]
     GameObject AIcon;
+
 
     [SerializeField]
     int maxTrashCount = 3;
@@ -63,6 +66,7 @@ public class PlayerTrashCollect : MonoBehaviour
         if (index < maxTrashCount)
         {
             trash[index] = aTrash;
+            visualScore[index].SetActive(true);
             index++;
 
             return true;
