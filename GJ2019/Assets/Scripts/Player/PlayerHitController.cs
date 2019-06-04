@@ -64,8 +64,8 @@ public class PlayerHitController : MonoBehaviour
             other.GetComponent<PlayerTrashCollect>().DropTrash();
             other.GetComponent<PlayerMovement>().Stun();
 
-            SetCollider(false);
 
         }
+            SetCollider(false);
     }
 }
