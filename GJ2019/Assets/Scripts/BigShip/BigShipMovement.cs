@@ -25,11 +25,14 @@ public class BigShipMovement : MonoBehaviour
     [SerializeField]
     Transform spawnPosition;
 
+    AudioSource m_engineAudio;
+
     Coroutine c = null;
 
     private void Start()
     {
         LevelTimer.Instnace.PlayAgain += PlayAgain;
+        m_engineAudio = GetComponent<AudioSource>();
     }
 
     void PlayAgain()
@@ -55,6 +58,7 @@ public class BigShipMovement : MonoBehaviour
                 StopCoroutine(c);
                 c = null;
                 isMoving = false;
+                m_engineAudio.Stop();
             }
         }
 
@@ -95,6 +99,7 @@ public class BigShipMovement : MonoBehaviour
 
     public void SetIsMoving()
     {
+        m_engineAudio.Play();
         isMoving = true;
         transform.position = startPosition.position;
     }
