@@ -139,11 +139,11 @@ public class PlayerMovement : MonoBehaviour
             case PlayerIndex.One:
                 return "Blue";
             case PlayerIndex.Two:
-                return "Blue";
+                return "Red";
             case PlayerIndex.Three:
-                return "Blue";
+                return "Green";
             case PlayerIndex.Four:
-                return "Blue";
+                return "Yellow";
         }
         return "";
     }
