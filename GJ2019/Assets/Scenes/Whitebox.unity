@@ -4991,5 +4991,98 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5394738993527681220, guid: 6f0cdea8f0d59b94d8d25f5c628ac51e,
+        type: 3}
+      propertyPath: m_spawnPositions.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5394738993527681220, guid: 6f0cdea8f0d59b94d8d25f5c628ac51e,
+        type: 3}
+      propertyPath: m_spawnPrefabs.Array.size
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5394738993527681220, guid: 6f0cdea8f0d59b94d8d25f5c628ac51e,
+        type: 3}
+      propertyPath: m_spawnPositions.Array.data[0]
+      value: 
+      objectReference: {fileID: 645173474}
+    - target: {fileID: 5394738993527681220, guid: 6f0cdea8f0d59b94d8d25f5c628ac51e,
+        type: 3}
+      propertyPath: m_spawnPositions.Array.data[1]
+      value: 
+      objectReference: {fileID: 1942584803}
+    - target: {fileID: 5394738993527681220, guid: 6f0cdea8f0d59b94d8d25f5c628ac51e,
+        type: 3}
+      propertyPath: m_spawnPositions.Array.data[2]
+      value: 
+      objectReference: {fileID: 1084099807}
+    - target: {fileID: 5394738993527681220, guid: 6f0cdea8f0d59b94d8d25f5c628ac51e,
+        type: 3}
+      propertyPath: m_spawnPositions.Array.data[3]
+      value: 
+      objectReference: {fileID: 785333679}
+    - target: {fileID: 5394738993527681220, guid: 6f0cdea8f0d59b94d8d25f5c628ac51e,
+        type: 3}
+      propertyPath: m_spawnPrefabs.Array.data[0]
+      value: 
+      objectReference: {fileID: 919514182078380834, guid: 04fc26abf7039df46994bd0b6da036be,
+        type: 3}
+    - target: {fileID: 5394738993527681220, guid: 6f0cdea8f0d59b94d8d25f5c628ac51e,
+        type: 3}
+      propertyPath: m_spawnPrefabs.Array.data[1]
+      value: 
+      objectReference: {fileID: 7555017036073043482, guid: db4f2663a02a6884398a2de9d78eba15,
+        type: 3}
+    - target: {fileID: 5394738993527681220, guid: 6f0cdea8f0d59b94d8d25f5c628ac51e,
+        type: 3}
+      propertyPath: m_spawnPrefabs.Array.data[2]
+      value: 
+      objectReference: {fileID: 2089506330684580596, guid: 99e704a75e52d0b4f94d720a83639fb1,
+        type: 3}
+    - target: {fileID: 5394738993527681220, guid: 6f0cdea8f0d59b94d8d25f5c628ac51e,
+        type: 3}
+      propertyPath: m_spawnPrefabs.Array.data[3]
+      value: 
+      objectReference: {fileID: 3140619519461885853, guid: 6d57e26e291b6584e90634780624b45c,
+        type: 3}
+    - target: {fileID: 5394738993527681220, guid: 6f0cdea8f0d59b94d8d25f5c628ac51e,
+        type: 3}
+      propertyPath: m_spawnPrefabs.Array.data[4]
+      value: 
+      objectReference: {fileID: 6574516118641575314, guid: 231bc878414e4ea468e75864b52f09f8,
+        type: 3}
+    - target: {fileID: 5394738993527681220, guid: 6f0cdea8f0d59b94d8d25f5c628ac51e,
+        type: 3}
+      propertyPath: m_spawnPrefabs.Array.data[5]
+      value: 
+      objectReference: {fileID: 8340604443717830509, guid: a4b6288f49a1a5c4c883e4de1083dd9d,
+        type: 3}
+    - target: {fileID: 5394738993527681220, guid: 6f0cdea8f0d59b94d8d25f5c628ac51e,
+        type: 3}
+      propertyPath: m_spawnPrefabs.Array.data[6]
+      value: 
+      objectReference: {fileID: 5327317986782553795, guid: 5ea9fe0a332b15641a40adf611a64329,
+        type: 3}
+    - target: {fileID: 5394738993527681220, guid: 6f0cdea8f0d59b94d8d25f5c628ac51e,
+        type: 3}
+      propertyPath: m_spawnPrefabs.Array.data[7]
+      value: 
+      objectReference: {fileID: 5565262922331251182, guid: a235c8bdb6e0d78498b71aa53426ada0,
+        type: 3}
+    - target: {fileID: 5394738993527681220, guid: 6f0cdea8f0d59b94d8d25f5c628ac51e,
+        type: 3}
+      propertyPath: m_spawnZoneWidth
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 5394738993527681220, guid: 6f0cdea8f0d59b94d8d25f5c628ac51e,
+        type: 3}
+      propertyPath: m_minimumSpawnTime
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 5394738993527681220, guid: 6f0cdea8f0d59b94d8d25f5c628ac51e,
+        type: 3}
+      propertyPath: m_maximumSpawnTime
+      value: 30
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6f0cdea8f0d59b94d8d25f5c628ac51e, type: 3}
