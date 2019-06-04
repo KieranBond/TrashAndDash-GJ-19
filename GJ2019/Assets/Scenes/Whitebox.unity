@@ -316,7 +316,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &77161027
 Transform:
   m_ObjectHideFlags: 0
@@ -2066,7 +2066,9 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, Unity.ugui,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_text: Trash 'n Drash
+  m_text: '
+
+    Trash ''n Dash'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2137,10 +2139,10 @@ MonoBehaviour:
     textComponent: {fileID: 1140910677}
     characterCount: 14
     spriteCount: 0
-    spaceCount: 2
-    wordCount: 3
+    spaceCount: 3
+    wordCount: 4
     linkCount: 0
-    lineCount: 1
+    lineCount: 2
     pageCount: 1
     materialCount: 1
   m_isUsingLegacyAnimationComponent: 0
@@ -3223,7 +3225,8 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 2.0039e-41, y: 1.01e-43, z: 2.9105607e-11, w: 0}
+  m_BoundingSphereOverride: {x: -1.7014118e+38, y: 6.9388935e-18, z: 2.524355e-29,
+    w: 1.8e-43}
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
@@ -3899,6 +3902,41 @@ PrefabInstance:
         type: 3}
       propertyPath: m_ReferenceResolution.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1631898066327204430, guid: 0e2de8e298b4c8249ae3b3b219dac11b,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 413.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1631898066327204430, guid: 0e2de8e298b4c8249ae3b3b219dac11b,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -249.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1631898065980097001, guid: 0e2de8e298b4c8249ae3b3b219dac11b,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -550.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 1631898065980097001, guid: 0e2de8e298b4c8249ae3b3b219dac11b,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -249.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1631898067039324903, guid: 0e2de8e298b4c8249ae3b3b219dac11b,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 349
+      objectReference: {fileID: 0}
+    - target: {fileID: 1631898067039324903, guid: 0e2de8e298b4c8249ae3b3b219dac11b,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -496.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1631898065928299612, guid: 0e2de8e298b4c8249ae3b3b219dac11b,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 404.1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0e2de8e298b4c8249ae3b3b219dac11b, type: 3}

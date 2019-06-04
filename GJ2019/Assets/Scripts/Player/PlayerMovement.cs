@@ -98,7 +98,7 @@ public class PlayerMovement : MonoBehaviour
             }
             if(!canSpeedBoost && boostTime <= 2)
             {
-                speed = movementSpeed;
+                speed = maxSpeed;
                 boostTime += Time.deltaTime;
             }
 
