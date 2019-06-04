@@ -465,6 +465,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scoreText: {fileID: 0}
+  playerMovement: {fileID: 2246781054745899063}
   trashPile: {fileID: 0}
 --- !u!198 &1608997060915866056
 ParticleSystem:

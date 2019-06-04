@@ -17,8 +17,19 @@ public class LevelTimer : MonoBehaviour
     [SerializeField]
     TextMeshProUGUI timerText;
 
+    [SerializeField]
+    GameObject scoreBoard;
+    [SerializeField]
+    TextMeshProUGUI[] scorePlaceText;
+
+    [SerializeField]
+    GameObject playAgainButton;
+
     public delegate void OnTimerEnd();
     public OnTimerEnd TimerEnd;
+
+    public delegate void OnPlayAgain();
+    public OnTimerEnd PlayAgain;
 
     // Start is called before the first frame update
     void Start()
@@ -33,6 +44,7 @@ public class LevelTimer : MonoBehaviour
         }
 
         TimerEnd += OnTimerOver;
+        PlayAgain += PlayAgainButton;
 
         OnTimerStart();
     }
@@ -68,10 +80,38 @@ public class LevelTimer : MonoBehaviour
         scores.Sort();
         scores.Reverse();
 
-        foreach (var item in scores)
+        for (int i = 0; i < scorePlaceText.Length; i++)
         {
-            Debug.Log(item);
+            string text = "";
+            switch (i)
+            {
+                case 0:
+                    text = "1st Place: " + playerScores[i].PlayerMovement.Colour() + " " + scores;
+                    break;
+                case 1:
+                    text = "2nd Place: " + playerScores[i].PlayerMovement.Colour() + " " + scores;
+                    break;
+                case 2:
+                    text = "3rd Place: " + playerScores[i].PlayerMovement.Colour() + " " + scores;
+                    break;
+                case 3:
+                    text = "4th Place: " + playerScores[i].PlayerMovement.Colour() + " " + scores;
+                    break;
+            }
+
+            scorePlaceText[i].text = text;
         }
+
+        scoreBoard.SetActive(true);
+        playAgainButton.SetActive(true);
+
+        PlayAgain();
+    }
+
+    void PlayAgainButton()
+    {
+        scoreBoard.SetActive(false);
+        playAgainButton.SetActive(false);
 
         OnTimerStart();
     }
