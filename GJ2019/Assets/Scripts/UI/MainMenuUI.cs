@@ -11,6 +11,9 @@ public class MainMenuUI : MonoBehaviour
     GameObject evnAssets;
 
     [SerializeField]
+    Animation infoAnim;
+
+    [SerializeField]
     private CanvasGroup m_canvasGroup;
     [SerializeField]
     private float m_fadetime = 1f;
@@ -43,10 +46,14 @@ public class MainMenuUI : MonoBehaviour
     public void PlayGame()
     {
         evnAssets.SetActive(false);
-        gameAssets.SetActive(true);
 
         m_canvasGroup.interactable = false;
 
+        infoAnim.Play();
+    }
+
+    public void Startfade()
+    {
         StartCoroutine(DoFade());
     }
 
@@ -61,6 +68,8 @@ public class MainMenuUI : MonoBehaviour
             yield return null;
         }
         while (m_canvasGroup.alpha > 0);
+
+        gameAssets.SetActive(true);
     }
 
     public void QuitGame()
