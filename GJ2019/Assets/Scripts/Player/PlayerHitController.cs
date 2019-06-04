@@ -62,6 +62,8 @@ public class PlayerHitController : MonoBehaviour
             gameObject.transform.parent.GetComponent<Rigidbody>().AddForce(-opositeVector);
 
             other.GetComponent<PlayerTrashCollect>().DropTrash();
+            other.GetComponent<PlayerMovement>().Stun();
+
         }
     }
 }
