@@ -369,7 +369,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40008d9b7ec6bb443ad24da7b0c9c46f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  force: 1200
+  force: 900
   player: {fileID: 8573757306646540129}
   charcAnim: {fileID: 5052461066121639221}
   collider: {fileID: 3386231053660544903}
@@ -657,6 +657,7 @@ MonoBehaviour:
   maxSpeed: 30
   InvertX: 0
   InvertY: 0
+  stunTime: 0
 --- !u!114 &3777716072789516738
 MonoBehaviour:
   m_ObjectHideFlags: 0
