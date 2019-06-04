@@ -31,8 +31,19 @@ public class PlayerMovement : MonoBehaviour
     public bool InvertX = false;
     public bool InvertY = false;
 
+    private Vector3 startPosition;
+    private Quaternion startRotation;
 
     private Vector3 newPosition;
+
+    private void Start()
+    {
+        startPosition = transform.position;
+        startRotation = transform.rotation;
+
+        LevelTimer.Instnace.PlayAgain += OnPlayAgain;
+    }
+
     // Update is called once per frame
     void Update()
     {
@@ -119,6 +130,30 @@ public class PlayerMovement : MonoBehaviour
     public void AttackAnimFin()
     {
         GetComponentInChildren<PlayerHitController>().SetCollider(false);
+    }
+
+    public string Colour()
+    {
+        switch (playerIndex)
+        {
+            case PlayerIndex.One:
+                return "Blue";
+            case PlayerIndex.Two:
+                return "Red";
+            case PlayerIndex.Three:
+                return "Green";
+            case PlayerIndex.Four:
+                return "Yellow";
+        }
+        return "";
+    }
+
+    void OnPlayAgain()
+    {
+        transform.position = startPosition;
+        transform.rotation = startRotation;
+        speed = 0;
+
     }
 
     public static Vector3 MovementRelativeToCamera(Vector3 a_input)

@@ -9,6 +9,11 @@ public class PlayerScore : MonoBehaviour
     TextMeshProUGUI scoreText;
 
     [SerializeField]
+    PlayerMovement playerMovement;
+    public PlayerMovement PlayerMovement
+    { get { return playerMovement; } }
+
+    [SerializeField]
     GameObject trashPile;
 
     int score;
@@ -16,9 +21,19 @@ public class PlayerScore : MonoBehaviour
 
     { get { return score; } }
 
+    private void Start()
+    {
+        LevelTimer.Instnace.PlayAgain += OnPlayAgain;
+    }
+
     private void Update()
     {
         scoreText.text = score.ToString();
+    }
+
+    void OnPlayAgain()
+    {
+        score = 0;
     }
 
     public void InceremtnScore(int aScoreToAdd)
