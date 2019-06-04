@@ -25,14 +25,14 @@ public class BigShipMovement : MonoBehaviour
     [SerializeField]
     Transform spawnPosition;
 
-    AudioSource m_engineAudio;
+    [SerializeField] AudioSource m_engineAudio;
+    [SerializeField] AudioSource m_splashAudio;
 
     Coroutine c = null;
 
     private void Start()
     {
         LevelTimer.Instnace.PlayAgain += PlayAgain;
-        m_engineAudio = GetComponent<AudioSource>();
     }
 
     void PlayAgain()
@@ -87,6 +87,7 @@ public class BigShipMovement : MonoBehaviour
             int randomIndex = Random.Range(0, (spawPrefabs.Length - 1));
             GameObject go = Instantiate(spawPrefabs[randomIndex], spawnParent);
             go.transform.position = RandomPositionInBounds(spawnPosition.GetComponent<BoxCollider>().bounds);
+            m_splashAudio.Play();
 
             index++;
             if(index >= 10)
