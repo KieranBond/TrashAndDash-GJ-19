@@ -49,7 +49,7 @@ namespace GJ.SpawningSystem
 
 
             //figure out where to start it.
-            Vector3 spawnPosition = m_spawnParent.position;
+            Vector3 spawnPosition = new Vector3();
 
             float spawnMinX = -m_spawnZoneWidth;
             float spawnMaxX = m_spawnZoneWidth;
@@ -59,7 +59,7 @@ namespace GJ.SpawningSystem
             float spawnMaxZ = m_spawnZoneLength;
             spawnPosition.z = Random.Range(spawnMinZ, spawnMaxZ);
 
-            spawnedItem.transform.position = spawnPosition;
+            spawnedItem.transform.localPosition = spawnPosition;
 
             //As we may use this for stationary obstacle spawning
             if(spawnedItem.GetComponent<IObstacle>() != null)
