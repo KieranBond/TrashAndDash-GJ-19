@@ -14,6 +14,7 @@ public class BigShipMovement : MonoBehaviour
 
     [SerializeField]
     bool isMoving = false;
+    bool hasPassed = false;
 
     [SerializeField]
     GameObject[] spawPrefabs;
@@ -25,6 +26,16 @@ public class BigShipMovement : MonoBehaviour
     Transform spawnPosition;
 
     Coroutine c = null;
+
+    private void Start()
+    {
+        LevelTimer.Instnace.PlayAgain += PlayAgain;
+    }
+
+    void PlayAgain()
+    {
+        hasPassed = false;
+    }
 
     // Update is called once per frame
     void Update()
@@ -40,13 +51,14 @@ public class BigShipMovement : MonoBehaviour
 
             if (Vector2.Distance(new Vector2(transform.position.x, transform.position.z), new Vector2(endPosition.position.x, endPosition.position.z)) < 3.0f)
             {
+                hasPassed = true;
                 StopCoroutine(c);
                 c = null;
                 isMoving = false;
             }
         }
 
-        if(!isMoving && LevelTimer.Instnace.RemainningTime <= 60.0f && LevelTimer.Instnace.RemainningTime > 0.0f)
+        if(!hasPassed && !isMoving && LevelTimer.Instnace.RemainningTime <= 60.0f && LevelTimer.Instnace.RemainningTime > 0.0f)
         {
             SetIsMoving();
         }
