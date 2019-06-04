@@ -4,5 +4,8 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/Whitebox.unity
+    guid: 9c997dde4e9e93344a9303ed7b9d66aa
   m_configObjects: {}

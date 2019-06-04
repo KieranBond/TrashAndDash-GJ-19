@@ -40,7 +40,7 @@ public class LevelTimer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        timerText.text = "Time Left: " + currentTime;
+        timerText.text = "Time Left: " + currentTime.ToString("F2");
         currentTime -= 1.0f * Time.deltaTime;
 
         if(currentTime <= 0.0f)

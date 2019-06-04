@@ -26,6 +26,13 @@ namespace GJ.Obstacles.Impl
             m_startingPosition = transform.position;
         }
 
+        public void Setup(float a_height = 5f, float a_moveDuration = 5f, float a_riseSinkDuration = 2f)
+        {
+            m_obstacleHeight = a_height;
+            m_riseSinkDuration = a_riseSinkDuration;
+            m_moveDuration = a_moveDuration;
+        }
+
         public void Play()
         {
 

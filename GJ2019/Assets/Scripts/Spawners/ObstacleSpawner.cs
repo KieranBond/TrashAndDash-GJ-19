@@ -69,6 +69,12 @@ namespace GJ.SpawningSystem
             {
                 spawnedItem.GetComponent<IObstacle>().Play();
             }
+            else
+            {
+                MovingObstacle mo = spawnedItem.AddComponent<MovingObstacle>();
+                mo.Setup(spawnedItem.transform.localScale.y);
+                mo.Play(m_spawnPositions, m_spawnZoneWidth);
+            }
 
             m_spawningRoutine = null;
         }
