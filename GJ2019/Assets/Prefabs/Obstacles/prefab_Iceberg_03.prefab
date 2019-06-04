@@ -107,11 +107,24 @@ MeshCollider:
   m_GameObject: {fileID: 9197172939233210969}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Convex: 1
   m_CookingOptions: 14
   m_Mesh: {fileID: -6778666777205614297, guid: 2a5e7652c5fce344aaf53b6c8eb7cede, type: 3}
+--- !u!65 &4357366253137588125
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9197172939233210969}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 11.209902, y: 10.119559, z: 10.698982}
+  m_Center: {x: -0.4062631, y: -0.10009601, z: -1.0596893}
 --- !u!1001 &901565558680185680
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -119,6 +132,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7703906707270180840}
     m_Modifications:
+    - target: {fileID: -927199367670048503, guid: 2a5e7652c5fce344aaf53b6c8eb7cede,
+        type: 3}
+      propertyPath: m_Name
+      value: IceBerg_3_FBX_01
+      objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 2a5e7652c5fce344aaf53b6c8eb7cede,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -173,11 +191,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -927199367670048503, guid: 2a5e7652c5fce344aaf53b6c8eb7cede,
-        type: 3}
-      propertyPath: m_Name
-      value: IceBerg_3_FBX_01
       objectReference: {fileID: 0}
     - target: {fileID: -1504981713932161579, guid: 2a5e7652c5fce344aaf53b6c8eb7cede,
         type: 3}
