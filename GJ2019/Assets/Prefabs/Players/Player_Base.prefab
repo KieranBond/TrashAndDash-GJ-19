@@ -707,7 +707,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movementSpeed: 0
-  boostSpeed: 35
+  boostSpeed: 40
   speed: 0
   playerIndex: 0
   rigidbody: {fileID: 7910877916331189713}
@@ -735,6 +735,7 @@ MonoBehaviour:
   - {fileID: 584778974725380948}
   - {fileID: 3823888210943162995}
   - {fileID: 7747695978533786314}
+  AIcon: {fileID: 0}
   maxTrashCount: 3
 --- !u!114 &2583592250249403779
 MonoBehaviour:
