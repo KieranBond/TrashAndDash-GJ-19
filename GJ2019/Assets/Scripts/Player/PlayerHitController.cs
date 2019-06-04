@@ -20,6 +20,13 @@ public class PlayerHitController : MonoBehaviour
     [SerializeField]
     BoxCollider collider;
 
+    AudioSource m_audioSource;
+
+    private void Start()
+    {
+        m_audioSource = GetComponent<AudioSource>();
+    }
+
     void Update()
     {
         prevState = state;
@@ -44,6 +51,8 @@ public class PlayerHitController : MonoBehaviour
     {
         if (other.tag == "Player")
         {
+            m_audioSource.Play();
+
             //collider.enabled = false;
 
             Vector3 opositeVector = other.transform.position - gameObject.transform.position;
