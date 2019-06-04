@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Copy_Me
+  m_Name: M_GarbageBarge
   m_Shader: {fileID: -6465566751694194690, guid: 06ba8ca773fbc394586bb30f6638a241,
     type: 3}
   m_ShaderKeywords: 
@@ -27,15 +27,15 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - Texture2D_60F00822:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: 41cb172bfd20f7241a2bc5ccedce7e8e, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - Texture2D_7CE6101B:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: 7afde719dfd2a48488b42026e345462e, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - Texture2D_93695D82:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: fbf8103e7135f23418deed24100cb971, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - Texture2D_A237D676:
@@ -43,7 +43,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - Texture2D_D0719D46:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: cd6553517b66c694781d2aabf168ad84, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
