@@ -289,6 +289,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 6680925646965801260}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &32448610 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1071243463863956615, guid: 66553be2ab9ba7c4d968d10eb8aece7b,
+    type: 3}
+  m_PrefabInstance: {fileID: 1698405497}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &57221242 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1631898067759569656, guid: 0e2de8e298b4c8249ae3b3b219dac11b,
@@ -929,11 +935,23 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 786546885}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &370806185 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3655577130075624841, guid: ef9fd5368efe1fc45bd5f9894349abf8,
+    type: 3}
+  m_PrefabInstance: {fileID: 306262495}
+  m_PrefabAsset: {fileID: 0}
 --- !u!225 &386946223 stripped
 CanvasGroup:
   m_CorrespondingSourceObject: {fileID: 3566025358723731725, guid: 0e2de8e298b4c8249ae3b3b219dac11b,
     type: 3}
   m_PrefabInstance: {fileID: 1631898067737098882}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &509138472 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 890095958647170930, guid: 29ee1dd323dc7184da8d4bba69cece18,
+    type: 3}
+  m_PrefabInstance: {fileID: 623395816}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &529811014
 GameObject:
@@ -1548,6 +1566,11 @@ PrefabInstance:
       propertyPath: playerBarge
       value: 
       objectReference: {fileID: 1698405499}
+    - target: {fileID: 6528002137154647050, guid: db8b5c7f36bb95d44997e3c5922f4168,
+        type: 3}
+      propertyPath: AIcon
+      value: 
+      objectReference: {fileID: 32448610}
     - target: {fileID: 7930431547339002392, guid: db8b5c7f36bb95d44997e3c5922f4168,
         type: 3}
       propertyPath: m_Mesh
@@ -1793,6 +1816,10 @@ PrefabInstance:
       propertyPath: playerBarge
       value: 
       objectReference: {fileID: 1030100808}
+    - target: {fileID: 9380019251849921, guid: 39d13e061358ec641ad58480c82a448a, type: 3}
+      propertyPath: AIcon
+      value: 
+      objectReference: {fileID: 1768329948}
     - target: {fileID: 4724775948978998285, guid: 39d13e061358ec641ad58480c82a448a,
         type: 3}
       propertyPath: m_textInfo.characterCount
@@ -2350,6 +2377,11 @@ PrefabInstance:
       propertyPath: playerBarge
       value: 
       objectReference: {fileID: 623395818}
+    - target: {fileID: 3277541028917846599, guid: db3114138d6ef234b9abb93d4e2fd33e,
+        type: 3}
+      propertyPath: AIcon
+      value: 
+      objectReference: {fileID: 509138472}
     - target: {fileID: 1867507381299840085, guid: db3114138d6ef234b9abb93d4e2fd33e,
         type: 3}
       propertyPath: m_Mesh
@@ -2474,6 +2506,11 @@ PrefabInstance:
       propertyPath: playerBarge
       value: 
       objectReference: {fileID: 306262497}
+    - target: {fileID: 2362187667947415900, guid: b35f8274c78eab14c95c009e704f282f,
+        type: 3}
+      propertyPath: AIcon
+      value: 
+      objectReference: {fileID: 370806185}
     - target: {fileID: 7023566519877341072, guid: b35f8274c78eab14c95c009e704f282f,
         type: 3}
       propertyPath: m_textInfo.characterCount
@@ -2705,6 +2742,12 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1768329948 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2787372481975561533, guid: fe056c45213074546bea5f2eb201e227,
+    type: 3}
+  m_PrefabInstance: {fileID: 1030100806}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1769585516 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1631898065980097006, guid: 0e2de8e298b4c8249ae3b3b219dac11b,
