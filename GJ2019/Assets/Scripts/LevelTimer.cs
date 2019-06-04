@@ -14,6 +14,8 @@ public class LevelTimer : MonoBehaviour
     [SerializeField]
     float startTime = 60.0f;
     float currentTime;
+    public float RemainningTime
+    { get { return currentTime; } }
 
     bool tickDown = true;
 
