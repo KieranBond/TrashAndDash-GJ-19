@@ -34,11 +34,16 @@ public class PlayerHitController : MonoBehaviour
 
         //if (state.IsConnected)
         //{
-            if (prevState.Buttons.X == ButtonState.Released && state.Buttons.X == ButtonState.Pressed)
-            {
-                charcAnim.SetTrigger("Attack");
-                SetCollider(true);
-            }
+        if (prevState.Buttons.X == ButtonState.Released && state.Buttons.X == ButtonState.Pressed)
+        {
+            GamePad.SetVibration(player.GetComponent<PlayerMovement>().playerIndex, 1, 1);
+            charcAnim.SetTrigger("Attack");
+            SetCollider(true);
+        }
+        else
+        {
+            GamePad.SetVibration(player.GetComponent<PlayerMovement>().playerIndex, 0, 0);
+        }
         //}
     }
 
@@ -52,7 +57,6 @@ public class PlayerHitController : MonoBehaviour
         if (other.tag == "Player")
         {
             m_audioSource.Play();
-
             //collider.enabled = false;
 
             Vector3 opositeVector = other.transform.position - gameObject.transform.position;
@@ -64,8 +68,6 @@ public class PlayerHitController : MonoBehaviour
             other.GetComponent<PlayerTrashCollect>().DropTrash();
             other.GetComponent<PlayerMovement>().Stun();
 
-
         }
-            SetCollider(false);
     }
 }
