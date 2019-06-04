@@ -31,7 +31,7 @@ public class PlayerTrashCollect : MonoBehaviour
     void Start()
     {
         trash = new GameObject[maxTrashCount];
-        trashSpawnZone = GameObject.Find("TrashSpawnZone");
+        trashSpawnZone = GameObject.Find("TrashSpawner");
     }
 
     // Update is called once per frame

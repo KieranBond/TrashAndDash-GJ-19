@@ -36,6 +36,9 @@ public class PlayerMovement : MonoBehaviour
 
     private Vector3 newPosition;
 
+    [SerializeField]
+    float stunTime;
+
     private void Start()
     {
         startPosition = transform.position;
@@ -125,6 +128,18 @@ public class PlayerMovement : MonoBehaviour
     private void FixedUpdate()
     {
         rigidbody.MovePosition(transform.position += -transform.up * speed * Time.deltaTime);
+    }
+
+    public void Stun()
+    {
+        StartCoroutine(StopControls());
+    }
+
+    IEnumerator StopControls()
+    {
+        enabled = false;
+        yield return new WaitForSeconds(stunTime);
+        enabled = true;
     }
 
     public void AttackAnimFin()
