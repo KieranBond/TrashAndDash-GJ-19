@@ -144,5 +144,15 @@ namespace GJ.Obstacles.Impl
             return EasingType;
         }
 
+        private void OnCollisionEnter(Collision collision)
+        {
+            if(collision.gameObject.tag == "Player")
+            {
+                Rigidbody playerRB = collision.gameObject.GetComponentInChildren<Rigidbody>();
+
+                playerRB.AddExplosionForce(10f, transform.position, 10f, 2f);
+            }
+        }
+
     }
 }

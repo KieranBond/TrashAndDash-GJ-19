@@ -39,25 +39,26 @@ public class PlayerTrashCollect : MonoBehaviour
     {
         //if (state.IsConnected)
         //{
-            if (enterDropOff)
+        if (enterDropOff)
+        {
+            prevState = state;
+            state = GamePad.GetState(GetComponent<PlayerMovement>().playerIndex);
+            if (prevState.Buttons.A == ButtonState.Released && state.Buttons.A == ButtonState.Pressed)
             {
-                prevState = state;
-                state = GamePad.GetState(GetComponent<PlayerMovement>().playerIndex);
-                if (prevState.Buttons.A == ButtonState.Released && state.Buttons.A == ButtonState.Pressed)
+                for (int i = 0; i < trash.Length; i++)
                 {
-                    for (int i = 0; i < trash.Length; i++)
+                    if (trash[i] != null)
                     {
-                        if (trash[i] != null)
-                        {
-                            GetComponent<PlayerScore>().InceremtnScore(1);
-                            Destroy(trash[i]);
-                            trash[i] = null;
-                        }
+                        GetComponent<PlayerScore>().InceremtnScore(1);
+                        Destroy(trash[i]);
+                        trash[i] = null;
                     }
-                    AIcon.SetActive(false);
-                    index = 0;
+                    visualScore[i].SetActive(false);
                 }
+                AIcon.SetActive(false);
+                index = 0;
             }
+        }
         //}
     }
 

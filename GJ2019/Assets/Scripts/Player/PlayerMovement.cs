@@ -61,7 +61,7 @@ public class PlayerMovement : MonoBehaviour
             {
                 movement.z *= -1;
             }
-            if(state.ThumbSticks.Left.X == 0 && state.ThumbSticks.Left.Y == 0 && speed >= movementSpeed)
+            if(state.ThumbSticks.Left.X == 0 && state.ThumbSticks.Left.Y == 0 && speed >= movementSpeed || state.Buttons.B == ButtonState.Pressed && speed >= movementSpeed)
             {
                // transform.position += movement * (speed -= acceleration * Time.deltaTime) * Time.deltaTime;
                 speed -= deceleration * Time.deltaTime;//movement * (speed -= acceleration * Time.deltaTime) * Time.deltaTime;
