@@ -220,7 +220,7 @@ InputManager:
     negativeButton: 
     positiveButton: page down
     altNegativeButton: 
-    altPositiveButton: joystick button 5
+    altPositiveButton: joystick button 0
     gravity: 0
     dead: 0
     sensitivity: 0
