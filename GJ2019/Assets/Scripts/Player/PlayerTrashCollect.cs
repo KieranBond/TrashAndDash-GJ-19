@@ -11,6 +11,9 @@ public class PlayerTrashCollect : MonoBehaviour
     GameObject playerBarge;
     [SerializeField]
     GameObject[] visualScore;
+    [SerializeField]
+    GameObject AIcon;
+
 
     [SerializeField]
     int maxTrashCount = 3;
@@ -51,6 +54,7 @@ public class PlayerTrashCollect : MonoBehaviour
                             trash[i] = null;
                         }
                     }
+                    AIcon.SetActive(false);
                     index = 0;
                 }
             }
@@ -85,6 +89,17 @@ public class PlayerTrashCollect : MonoBehaviour
     {
         if (other.tag == "BargeDropOff" && playerBarge == other.gameObject)
         {
+            bool enable = false;
+            for (int i = 0; i < trash.Length; i++)
+            {
+                if(trash[i] != null)
+                {
+                    enable = true;
+                    break;
+                }
+            }
+            AIcon.SetActive(enable);
+
             enterDropOff = true;
         }
     }
@@ -92,6 +107,7 @@ public class PlayerTrashCollect : MonoBehaviour
     {
         if (other.tag == "BargeDropOff" && playerBarge == other.gameObject)
         {
+            AIcon.SetActive(false);
             enterDropOff = false;
         }
     }

@@ -14,6 +14,8 @@ public class LevelTimer : MonoBehaviour
     [SerializeField]
     float startTime = 60.0f;
     float currentTime;
+    public float RemainningTime
+    { get { return currentTime; } }
 
     bool tickDown = true;
 
@@ -38,7 +40,7 @@ public class LevelTimer : MonoBehaviour
     public OnTimerEnd PlayAgain;
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         if (instance == null)
         {

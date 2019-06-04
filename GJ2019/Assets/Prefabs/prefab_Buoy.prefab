@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 2789711019156374649}
   - component: {fileID: 4395366521244632064}
   - component: {fileID: 219114021309959637}
+  - component: {fileID: 2438837994203118634}
   m_Layer: 0
   m_Name: Buoy_Fbx_01
   m_TagString: Untagged
@@ -94,6 +95,25 @@ MonoBehaviour:
   playerOverTrash: 0
   playerOverDropOff: 0
   player: {fileID: 0}
+--- !u!95 &2438837994203118634
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1853079923092428604}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: e7aea8b632578bb41a42ad57e1af7879, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &7397283533496526320
 GameObject:
   m_ObjectHideFlags: 0

@@ -48,6 +48,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Floats:
     - Vector1_A35CF3D: 0
+    - Vector1_B2A5C14F: 1
     m_Colors:
     - Color_B2449043: {r: 0, g: 0.269247, b: 0.5754717, a: 0}
     - Color_BD7DEC34: {r: 0.08675194, g: 1, b: 0, a: 0}

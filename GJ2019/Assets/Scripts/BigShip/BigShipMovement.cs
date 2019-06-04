@@ -45,6 +45,16 @@ public class BigShipMovement : MonoBehaviour
                 isMoving = false;
             }
         }
+
+        if(!isMoving && LevelTimer.Instnace.RemainningTime <= 60.0f && LevelTimer.Instnace.RemainningTime > 0.0f)
+        {
+            SetIsMoving();
+        }
+    }
+
+    public void StartMoving()
+    {
+        SetIsMoving();
     }
 
     Vector3 RandomPositionInBounds(Bounds aBounds)

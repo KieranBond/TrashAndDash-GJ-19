@@ -12,13 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef42ed79f2d3bfc4699ab6540933a880, type: 3}
   m_Name: ColorLookup
   m_EditorClassIdentifier: 
-  active: 1
+  active: 0
   m_AdvancedMode: 0
   texture:
     m_OverrideState: 1
-    m_Value: {fileID: 2800000, guid: 30aacac977d91ce43a8ec41620298ee7, type: 3}
+    m_Value: {fileID: 8900000, guid: e9ba66f0830c64b50aa84d5129f0fb8e, type: 3}
   contribution:
-    m_OverrideState: 0
+    m_OverrideState: 1
     m_Value: 1
     min: 0
     max: 1
@@ -41,7 +41,7 @@ MonoBehaviour:
     m_Value: 0
   contrast:
     m_OverrideState: 1
-    m_Value: 7.7
+    m_Value: 2.1
     min: -100
     max: 100
   colorFilter:
@@ -57,7 +57,7 @@ MonoBehaviour:
     max: 180
   saturation:
     m_OverrideState: 1
-    m_Value: 22
+    m_Value: 100
     min: -100
     max: 100
 --- !u!114 &11400000

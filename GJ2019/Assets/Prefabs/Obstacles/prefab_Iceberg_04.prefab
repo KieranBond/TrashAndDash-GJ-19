@@ -119,11 +119,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1660871255555247955}
     m_Modifications:
-    - target: {fileID: -927199367670048503, guid: e1dc7c8803f2d9b4da6b15b5d7f39824,
-        type: 3}
-      propertyPath: m_Name
-      value: IceBerg_4_FBX_01
-      objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: e1dc7c8803f2d9b4da6b15b5d7f39824,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -132,7 +127,7 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: e1dc7c8803f2d9b4da6b15b5d7f39824,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -6
+      value: -7.09
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: e1dc7c8803f2d9b4da6b15b5d7f39824,
         type: 3}
@@ -178,6 +173,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: e1dc7c8803f2d9b4da6b15b5d7f39824,
+        type: 3}
+      propertyPath: m_Name
+      value: IceBerg_4_FBX_01
       objectReference: {fileID: 0}
     - target: {fileID: -1504981713932161579, guid: e1dc7c8803f2d9b4da6b15b5d7f39824,
         type: 3}
