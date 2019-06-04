@@ -84,6 +84,7 @@ public class PlayerTrashCollect : MonoBehaviour
             trash[index - 1].transform.SetParent(trashSpawnZone.transform);
             trash[index - 1].SetActive(true);
             trash[index - 1] = null;
+            visualScore[index - 1].SetActive(false);
             index--;
         }
     }
